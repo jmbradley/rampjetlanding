@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Ramp/Jet turns your website into a self-improving growth engine. Engineered for discovery across AI search and Google, structured for conversion, continuously refined based on real visitor behavior. For mid-market B2B teams." />
+<title>Ramp/Jet — A self-improving growth engine for B2B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f4efe6;
+  --cream-deep: #ebe4d6;
+  --ink: #1a1a1a;
+  --ink-soft: #2c2926;
+  --muted: #6b655c;
+  --line: #d9d2c4;
+  --accent: #e94b35;
+  --accent-deep: #c93a25;
+  --accent-soft: #fae3dd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle paper texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(233, 75, 53, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(233, 75, 53, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container.container--flush { padding: 0; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* NAV */
+nav {
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo .slash,
+.tier-name .slash,
+.section-intro .slash,
+.tier-desc .slash,
+.footer-text .slash,
+.flywheel-caption .slash,
+.surface-shift-body .slash,
+.flywheel-point-content .slash {
+  color: var(--accent);
+  font-weight: 400;
+  margin: 0 -1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--cream) !important;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: var(--accent-deep);
+  color: var(--cream) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(233, 75, 53, 0.25);
+}
+
+/* HERO */
+.hero {
+  padding: 80px 0 120px;
+  position: relative;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+  padding: 8px 16px;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(56px, 9vw, 124px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  font-variation-settings: "opsz" 144;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.1s forwards;
+}
+
+.hero h1 .accent {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+/* Rotating word styling */
+.rotator {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.rotator-sizer {
+  display: inline-block;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rotator-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  white-space: nowrap;
+  animation: rotateIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rotator-word.exiting {
+  animation: rotateOut 0.4s cubic-bezier(0.55, 0, 0.55, 1) forwards;
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+    filter: blur(4px);
+  }
+}
+
+.hero h1 .underline-mark {
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1 .underline-mark::after {
+  content: '';
+  position: absolute;
+  bottom: 0.08em;
+  left: -2%;
+  width: 104%;
+  height: 8px;
+  background: var(--accent);
+  opacity: 0.2;
+  z-index: -1;
+  transform: skewX(-3deg);
+}
+
+.hero-sub {
+  font-size: 22px;
+  line-height: 1.45;
+  max-width: 620px;
+  color: var(--ink-soft);
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.25s forwards;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.4s forwards;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--cream);
+  padding: 18px 32px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(233, 75, 53, 0.25);
+}
+
+.btn-primary .arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translate(4px, -4px);
+}
+
+.btn-secondary {
+  color: var(--ink);
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.25s ease;
+}
+
+.btn-secondary:hover {
+  gap: 14px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RAMP VISUAL */
+.ramp-visual {
+  position: absolute;
+  right: -80px;
+  top: 100px;
+  width: 480px;
+  height: 480px;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.ramp-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ramp dot — feelers extend to satellites, then pull them back into the core */
+.feeler {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-linecap: butt;
+  fill: none;
+  stroke-dasharray: 0 100;
+  animation: feelerExtend 3.6s ease-in-out infinite;
+}
+
+.feeler-1 { animation-delay: 0s; }
+.feeler-2 { animation-delay: 0.9s; }
+.feeler-3 { animation-delay: 1.8s; }
+.feeler-4 { animation-delay: 2.7s; }
+
+@keyframes feelerExtend {
+  0%, 10% { stroke-dasharray: 0 100; }
+  30%, 35% { stroke-dasharray: 100 0; }
+  65%, 100% { stroke-dasharray: 0 100; }
+}
+
+.satellite {
+  opacity: 0;
+  animation-duration: 3.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.satellite-1 { animation-name: satellite1; animation-delay: 0s; }
+.satellite-2 { animation-name: satellite2; animation-delay: 0.9s; }
+.satellite-3 { animation-name: satellite3; animation-delay: 1.8s; }
+.satellite-4 { animation-name: satellite4; animation-delay: 2.7s; }
+
+/* Each satellite: fade in at base position → hold while line extends →
+   travel to Ramp core in sync with line retraction → fade out (absorbed) */
+@keyframes satellite1 {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  10%  { opacity: 1; transform: translate(0, 0); }
+  35%  { opacity: 1; transform: translate(0, 0); }
+  65%  { opacity: 1; transform: translate(38px, 72px); }
+  70%  { opacity: 0; transform: translate(38px, 72px); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+
+@keyframes satellite2 {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  10%  { opacity: 1; transform: translate(0, 0); }
+  35%  { opacity: 1; transform: translate(0, 0); }
+  65%  { opacity: 1; transform: translate(62px, 40px); }
+  70%  { opacity: 0; transform: translate(62px, 40px); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+
+@keyframes satellite3 {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  10%  { opacity: 1; transform: translate(0, 0); }
+  35%  { opacity: 1; transform: translate(0, 0); }
+  65%  { opacity: 1; transform: translate(78px, 0); }
+  70%  { opacity: 0; transform: translate(78px, 0); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+
+@keyframes satellite4 {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  10%  { opacity: 1; transform: translate(0, 0); }
+  35%  { opacity: 1; transform: translate(0, 0); }
+  65%  { opacity: 1; transform: translate(58px, -45px); }
+  70%  { opacity: 0; transform: translate(58px, -45px); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+
+/* Core gives a small pulse on each absorption (every 0.9s) */
+.ramp-core {
+  transform-origin: 100px 240px;
+  animation: rampCorePulse 0.9s ease-in-out infinite;
+}
+
+@keyframes rampCorePulse {
+  0%, 25%, 70%, 100% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+}
+
+/* Data packets ride the trajectory from Ramp to Calibrate after each absorption */
+.packet {
+  offset-path: path('M 100 240 A 160 160 0 0 1 260 80');
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  opacity: 0;
+  animation: packetTravel 3.6s ease-in-out infinite;
+}
+
+.packet-1 { animation-delay: 0s; }
+.packet-2 { animation-delay: 0.9s; }
+.packet-3 { animation-delay: 1.8s; }
+.packet-4 { animation-delay: 2.7s; }
+
+@keyframes packetTravel {
+  0%, 66% { offset-distance: 0%; opacity: 0; }
+  67% { offset-distance: 0%; opacity: 1; }
+  99% { offset-distance: 100%; opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* Calibrate dot — flashes + scales on each packet impact (every 0.9s) */
+.calibrate-core {
+  transform-origin: 260px 80px;
+  animation: calibrateFlash 0.9s ease-out infinite;
+  animation-delay: 3.564s;
+}
+
+@keyframes calibrateFlash {
+  0%   { fill: #e94b35; transform: scale(1.5); }
+  30%  { fill: #1a1a1a; transform: scale(1); }
+  100% { fill: #1a1a1a; transform: scale(1); }
+}
+
+/* Ripple ring expands outward from Calibrate on each impact */
+.calibrate-ripple {
+  transform-origin: 260px 80px;
+  opacity: 0;
+  animation: calibrateRipple 0.9s ease-out infinite;
+  animation-delay: 3.564s;
+}
+
+@keyframes calibrateRipple {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(3);   opacity: 0; }
+}
+
+/* Tune dial — needle stays static, then snaps to a new (non-uniform) angle each
+   time a packet passes through. 8 discrete jumps per 7.2s cycle, paced 0.9s apart.
+   Animation-delay 2.81s holds the needle at 0° until the first jump, which coincides
+   with packet 1's first pass-through at real time 3.71s. */
+.tune-needle {
+  transform-origin: 420px 240px;
+  animation: tuneTick 7.2s steps(1, jump-end) infinite;
+  animation-delay: 2.81s;
+}
+
+@keyframes tuneTick {
+  0%    { transform: rotate(0deg);   }
+  12.5% { transform: rotate(73deg);  }
+  25%   { transform: rotate(215deg); }
+  37.5% { transform: rotate(142deg); }
+  50%   { transform: rotate(308deg); }
+  62.5% { transform: rotate(31deg);  }
+  75%   { transform: rotate(187deg); }
+  87.5% { transform: rotate(264deg); }
+  100%  { transform: rotate(0deg);   }
+}
+
+/* Approach section — logarithmic growth spiral. Signal dots emerge at center,
+   travel outward through 4.25 turns, then exit straight down into the sphere. */
+.growth-signal {
+  offset-path: path('M 195.0 120.0 L 195.0 121.4 L 194.5 122.8 L 193.7 124.1 L 192.5 125.1 L 191.1 125.8 L 189.4 126.1 L 187.7 125.9 L 186.0 125.2 L 184.5 124.0 L 183.4 122.5 L 182.8 120.6 L 182.6 118.5 L 183.1 116.4 L 184.1 114.5 L 185.7 112.9 L 187.8 111.7 L 190.1 111.1 L 192.7 111.2 L 195.2 112.0 L 197.4 113.5 L 199.2 115.6 L 200.4 118.3 L 200.8 121.2 L 200.4 124.3 L 199.1 127.3 L 197.0 129.8 L 194.2 131.8 L 190.8 132.9 L 187.2 133.1 L 183.5 132.2 L 180.0 130.3 L 177.2 127.4 L 175.1 123.7 L 174.2 119.5 L 174.4 115.0 L 175.9 110.6 L 178.6 106.6 L 182.5 103.5 L 187.2 101.4 L 192.5 100.7 L 198.0 101.6 L 203.2 103.9 L 207.7 107.8 L 211.1 112.8 L 213.0 118.9 L 213.2 125.4 L 211.5 132.0 L 208.0 138.0 L 202.8 143.1 L 196.2 146.6 L 188.6 148.2 L 180.6 147.7 L 172.8 144.8 L 165.8 139.8 L 160.3 132.9 L 156.8 124.4 L 155.8 114.9 L 157.4 105.2 L 161.8 96.0 L 168.7 88.1 L 177.9 82.3 L 188.7 79.0 L 200.3 78.9 L 211.9 82.0 L 222.6 88.4 L 231.4 97.9 L 237.5 109.7 L 240.2 123.3 L 239.0 137.5 L 233.7 151.3 L 224.6 163.6 L 212.0 173.2 L 196.8 179.2 L 180.0 180.8 L 162.7 177.6 L 146.5 169.6 L 132.7 157.0 L 122.5 140.5 L 117.0 121.2 L 117.0 100.5 L 123.0 79.8 L 134.7 61.0 L 151.8 45.6 L 173.1 35.2 L 197.3 30.8 L 222.6 33.3 L 247.1 43.1 L 268.6 59.7 L 285.3 82.3 L 295.5 109.6 L 297.9 139.6 L 291.8 170.2 L 277.0 198.9 L 254.1 223.2 L 224.5 240.8 L 190.0 250.0');
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  opacity: 0;
+  animation: spiralTravel 12s linear infinite;
+}
+
+.growth-signal-1 { animation-delay: 0s; }
+.growth-signal-2 { animation-delay: 4s; }
+.growth-signal-3 { animation-delay: 8s; }
+
+@keyframes spiralTravel {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  3%   { opacity: 1; }
+  97%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* Return signal — once per 12s spiral cycle, a single dot emerges from
+   the polyhedron, arcs wide to the right, and drops back into the spiral's
+   center: the consolidated learning that feeds the next cycle. */
+.return-signal {
+  offset-path: path('M 190 250 C 70 230 70 140 195 120');
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  opacity: 0;
+  animation: returnTravel 12s linear infinite;
+}
+
+@keyframes returnTravel {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  3%   { offset-distance: 0%;   opacity: 1; }
+  38%  { opacity: 1; }
+  42%  { offset-distance: 100%; opacity: 0; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* 3D morphing polyhedron at spiral's end — cube ↔ rhombic dodecahedron via
+   chamfering. Six square faces translate outward while twelve rhombic faces
+   expand their clip-path, both driven by a single Houdini-registered --p.
+   Charcoal squares = raw input → orange rhombuses = branded structure. */
+@property --p {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+.morph-poly {
+  position: absolute;
+  top: 69.4%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  perspective: 25em;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+
+.morph-poly .a3d,
+.morph-poly .s3d,
+.morph-poly .s2d {
+  display: grid;
+  grid-area: 1 / 1;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.morph-poly .a3d {
+  --p: 0;
+  --q: calc(1 - var(--p));
+  will-change: transform;
+  animation:
+    morphP 8s cubic-bezier(.65, 0, .35, 1) infinite alternate,
+    morphR 16s linear infinite;
+}
+
+@keyframes morphP { to { --p: 1; } }
+@keyframes morphR { to { transform: rotateY(1turn); } }
+
+.morph-poly .s4gon {
+  --sgn: 0;
+  --mid: calc(1 - var(--sgn) * var(--sgn));
+  --end: calc(1 - var(--mid));
+  --lum: calc(62% + var(--sgn) * 5%);
+  height: 80px;
+  opacity: 0.875;
+  animation: morphS 8s linear calc(var(--j) / 4 * -16s) infinite alternate;
+}
+
+@keyframes morphS { to { filter: brightness(0.2); } }
+
+/* End-cap faces (top/bottom of cube; outer rings of dodecahedron) */
+.morph-poly .s4gon--sq:nth-child(5),
+.morph-poly .s4gon--rh:nth-child(-n + 4) { --sgn: -1; }
+
+.morph-poly .s4gon--sq:last-child,
+.morph-poly .s4gon--rh:nth-last-child(-n + 4) { --sgn: 1; }
+
+/* Position index within each parent (4n + 1..4) */
+.morph-poly .s4gon:nth-child(4n + 1) { --j: calc(0 + 0.5 * var(--typ) * var(--mid)); }
+.morph-poly .s4gon:nth-child(4n + 2) { --j: calc(1 + 0.5 * var(--typ) * var(--mid)); }
+.morph-poly .s4gon:nth-child(4n + 3) { --j: calc(2 + 0.5 * var(--typ) * var(--mid)); }
+.morph-poly .s4gon:nth-child(4n + 4) { --j: calc(3 + 0.5 * var(--typ) * var(--mid)); }
+
+.morph-poly .s4gon--sq {
+  --typ: 0;
+  --ang: calc((var(--end) * var(--sgn) + var(--mid) * var(--j)) * 90deg);
+  width: 80px;
+  transform:
+    rotate3d(var(--end), var(--mid), 0, var(--ang))
+    translateZ(calc(40px * (1 + var(--p))))
+    scale(calc(0.975 * var(--q)));
+  background: radial-gradient(
+    hsl(28, calc(20% - var(--sgn) * 5%), calc(var(--lum) - 40%)),
+    hsl(25, calc(20% - var(--sgn) * 5%), calc(var(--lum) - 55%))
+  );
+}
+
+.morph-poly .s4gon--rh {
+  --typ: 1;
+  width: 113.14px;
+  transform:
+    rotateY(calc(var(--j) * 90deg))
+    rotateX(calc(var(--end) * var(--sgn, 1) * 45deg))
+    rotate(calc(var(--end) * 90deg))
+    translateZ(56.57px)
+    scale(0.975);
+  background: radial-gradient(
+    hsl(8, calc(78% - var(--sgn) * 9%), calc(var(--lum) - 6%)),
+    hsl(11, calc(78% - var(--sgn) * 9%), calc(var(--lum) - 20%))
+  );
+  clip-path: polygon(
+    50% 0,
+    calc(50% * (1 + var(--p))) calc(50% * (1 - var(--q))),
+    calc(50% * (1 + var(--p))) calc(50% * (1 + var(--q))),
+    50% 100%,
+    calc(50% * (1 - var(--p))) calc(50% * (1 + var(--q))),
+    calc(50% * (1 - var(--p))) calc(50% * (1 - var(--q)))
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .morph-poly .a3d,
+  .morph-poly .s4gon { animation: none; }
+}
+
+/* Jet ring rotates clockwise one full turn per slot-fill cycle (7.2s).
+   Synced with packet timing: in 0.9s the ring rotates 45° (one slot-spacing),
+   so a fresh slot reaches the landing point P each time a packet arrives. */
+.jet-ring {
+  transform-origin: 260px 400px;
+  animation: jetRotate 7.2s linear infinite;
+  animation-delay: 4.374s;
+}
+
+@keyframes jetRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Calibrate → Jet accretion packets — all aim at the same fixed landing point P
+   (angle 135° on the ring). The rotating ring delivers a different slot to P
+   for each arrival, so packet and slot meet exactly. Slowed flight (~1.5s) so
+   the dots are clearly visible in transit. */
+.packet-acc {
+  offset-path: path('M 260 80 A 160 160 0 0 1 292.8 396.6');
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  opacity: 0;
+  animation: packetAcc 7.2s linear infinite;
+}
+
+.packet-acc-1 { animation-delay: 2.874s; }
+.packet-acc-2 { animation-delay: 3.774s; }
+.packet-acc-3 { animation-delay: 4.674s; }
+.packet-acc-4 { animation-delay: 5.574s; }
+.packet-acc-5 { animation-delay: 6.474s; }
+.packet-acc-6 { animation-delay: 7.374s; }
+.packet-acc-7 { animation-delay: 8.274s; }
+.packet-acc-8 { animation-delay: 9.174s; }
+
+@keyframes packetAcc {
+  0%      { offset-distance: 0%;   opacity: 0; }
+  1%      { offset-distance: 0%;   opacity: 1; }
+  20.83%  { offset-distance: 100%; opacity: 1; }
+  21%     { offset-distance: 100%; opacity: 0; }
+  100%    { offset-distance: 100%; opacity: 0; }
+}
+
+/* 8 slots light up one-by-one as packets arrive (every 0.9s); all reset together when full */
+.jet-slot {
+  opacity: 0;
+  animation-duration: 7.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 4.374s;
+}
+
+.jet-slot-1 { animation-name: jetSlot1; }
+.jet-slot-2 { animation-name: jetSlot2; }
+.jet-slot-3 { animation-name: jetSlot3; }
+.jet-slot-4 { animation-name: jetSlot4; }
+.jet-slot-5 { animation-name: jetSlot5; }
+.jet-slot-6 { animation-name: jetSlot6; }
+.jet-slot-7 { animation-name: jetSlot7; }
+.jet-slot-8 { animation-name: jetSlot8; }
+
+@keyframes jetSlot1 { 0%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot2 { 0%, 12% { opacity: 0; } 13%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot3 { 0%, 25% { opacity: 0; } 26%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot4 { 0%, 37% { opacity: 0; } 38%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot5 { 0%, 50% { opacity: 0; } 51%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot6 { 0%, 62% { opacity: 0; } 63%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot7 { 0%, 75% { opacity: 0; } 76%, 95% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes jetSlot8 { 0%, 87% { opacity: 0; } 88%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Return loop: once per 7.2s cycle, a consolidated-signal packet flows Jet → Ramp,
+   arriving as the Jet ring resets — visually closes the flywheel. */
+.packet-return {
+  offset-path: path('M 260 400 A 160 160 0 0 1 100 240');
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  opacity: 0;
+  animation: packetReturn 7.2s linear infinite;
+  animation-delay: 10.674s;
+}
+
+@keyframes packetReturn {
+  0%    { offset-distance: 0%;   opacity: 0; }
+  1%    { offset-distance: 0%;   opacity: 1; }
+  12.5% { offset-distance: 100%; opacity: 1; }
+  13.5% { offset-distance: 100%; opacity: 0; }
+  100%  { offset-distance: 100%; opacity: 0; }
+}
+
+@media (max-width: 1024px) {
+  .ramp-visual {
+    display: none;
+  }
+}
+
+/* MARQUEE / SOCIAL PROOF */
+.proof-band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  background: var(--cream-deep);
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.proof-band-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
+}
+
+.proof-band-inner span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.proof-band-inner span::before {
+  content: '◆';
+  color: var(--accent);
+  font-size: 8px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  max-width: 900px;
+}
+
+.section-title .italic {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.section-intro {
+  font-size: 20px;
+  color: var(--ink-soft);
+  max-width: 640px;
+  line-height: 1.5;
+  margin-bottom: 80px;
+}
+
+/* PROBLEM SECTION */
+.problem {
+  background: var(--ink);
+  color: var(--cream);
+  margin: 0 -40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 0;
+}
+
+.problem .section-eyebrow {
+  color: var(--accent);
+}
+
+.problem .section-title { color: var(--cream); }
+.problem .section-intro { color: rgba(244, 239, 230, 0.9); }
+
+.source-citation {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(244, 239, 230, 0.7);
+  letter-spacing: 0.04em;
+  margin-top: 64px;
+  line-height: 1.6;
+}
+
+.problem .section-eyebrow::before {
+  background: var(--accent);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1200px;
+}
+
+.problem-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.stat {
+  border-top: 1px solid rgba(244, 239, 230, 0.15);
+  padding-top: 24px;
+}
+
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 15px;
+  color: rgba(244, 239, 230, 0.7);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .stat-number {
+    font-size: 48px;
+  }
+}
+
+/* HOW IT WORKS - THE THREE TIERS */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.tier-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tier-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 24px 48px -12px rgba(26, 26, 26, 0.08);
+}
+
+.tier-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tier-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tier-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-soft);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+
+.tier-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.tier-name {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.tier-tagline {
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.tier-desc {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.tier-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tier-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.tier-list li::before {
+  content: '→';
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* APPROACH / FLYWHEEL */
+.flywheel-section {
+  background: var(--cream-deep);
+  margin: 0 -40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.flywheel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.flywheel-points {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.flywheel-point {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.flywheel-point-num {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 0.9;
+  flex-shrink: 0;
+  width: 80px;
+}
+
+.flywheel-point-content h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.flywheel-point-content p {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.flywheel-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.flywheel-stage {
+  position: relative;
+  width: 100%;
+}
+
+.flywheel-caption {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  text-align: center;
+  max-width: 360px;
+}
+
+.flywheel-caption-top    { margin-bottom: 12px; }
+.flywheel-caption-bottom { margin-top: 12px; }
+
+@media (max-width: 1024px) {
+  .flywheel-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .flywheel-visual {
+    order: -1;
+  }
+}
+
+/* PITCH BLOCK */
+.pitch-block {
+  text-align: center;
+  padding: 160px 0;
+  position: relative;
+}
+
+.pitch-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pitch-quote .accent {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.pitch-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 120px;
+  color: var(--accent);
+  line-height: 0.5;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+  opacity: 0.4;
+}
+
+/* WEBSITES → WEBSURFACES */
+.surface-shift {
+  text-align: center;
+  padding: 140px 0;
+}
+
+.surface-shift-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 auto 32px;
+  max-width: 900px;
+}
+
+.surface-shift-title .italic {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.surface-shift-body {
+  font-size: 20px;
+  color: var(--ink-soft);
+  max-width: 680px;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* CTA SECTION */
+.cta-section {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 32px;
+  margin: 80px 0 120px;
+  padding: 100px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.cta-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title .italic {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.cta-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 18px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(244, 239, 230, 0.2);
+  background: rgba(244, 239, 230, 0.05);
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.cta-input::placeholder {
+  color: rgba(244, 239, 230, 0.5);
+}
+
+.cta-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(244, 239, 230, 0.08);
+}
+
+.cta-note {
+  font-size: 13px;
+  color: rgba(244, 239, 230, 0.6);
+  margin-top: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 48px 0 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  nav {
+    padding: 24px 0;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+  .hero {
+    padding: 60px 0 80px;
+  }
+  section {
+    padding: 80px 0;
+  }
+  .problem, .flywheel-section {
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .cta-section {
+    padding: 60px 24px;
+    border-radius: 24px;
+  }
+  .flywheel-point-num {
+    font-size: 40px;
+    width: 60px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* Make sure faded-in content is visible (animations are still set with `forwards`) */
+  .hero-eyebrow,
+  .hero h1,
+  .hero-sub,
+  .hero-cta-row,
+  .ramp-visual,
+  .rotator-word {
+    opacity: 1 !important;
+  }
+
+  /* Stop infinite/decorative motion entirely */
+  .hero-eyebrow .dot,
+  .proof-band-inner,
+  .rotator-word,
+  .rotator-word.exiting,
+  .feeler,
+  .satellite,
+  .ramp-core,
+  .packet,
+  .calibrate-core,
+  .calibrate-ripple,
+  .tune-needle,
+  .packet-acc,
+  .jet-slot,
+  .jet-ring,
+  .packet-return,
+  .growth-signal {
+    animation: none !important;
+  }
+
+  /* Keep feelers + satellites + jet slots visible statically; hide travelling/transient elements */
+  .feeler { stroke-dasharray: 100 0 !important; }
+  .satellite { opacity: 1 !important; transform: none !important; }
+  .packet { opacity: 0 !important; }
+  .calibrate-ripple { opacity: 0 !important; }
+  .calibrate-core { fill: #1a1a1a !important; transform: none !important; }
+  .tune-needle { transform: none !important; }
+  .growth-signal { opacity: 0 !important; }
+  .packet-acc { opacity: 0 !important; }
+  .jet-slot { opacity: 1 !important; }
+  .jet-ring { transform: none !important; }
+  .packet-return { opacity: 0 !important; }
+
+  /* Disable hover lift transforms */
+  .nav-cta:hover,
+  .btn-primary:hover,
+  .tier-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Thank-you message after CTA submit */
+.thanks-message {
+  color: var(--accent);
+  margin-top: 24px;
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Ramp<span class="slash">/</span>Jet</div>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact" class="nav-cta">Get a baseline</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="ramp-visual">
+      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- The loop: a single dotted circle that all three nodes sit on -->
+        <circle cx="260" cy="240" r="160" fill="none" stroke="#e94b35" stroke-width="2" stroke-dasharray="4 6" opacity="0.5"/>
+
+        <!-- Ramp aura rings (9 o'clock on the loop) -->
+        <circle cx="100" cy="240" r="60" fill="#e94b35" opacity="0.08"/>
+        <circle cx="100" cy="240" r="40" fill="#e94b35" opacity="0.15"/>
+
+        <!-- Feeler lines (extend toward satellites, then retract carrying them back) -->
+        <line class="feeler feeler-1" x1="100" y1="240" x2="62" y2="168" pathLength="100"/>
+        <line class="feeler feeler-2" x1="100" y1="240" x2="38" y2="200" pathLength="100"/>
+        <line class="feeler feeler-3" x1="100" y1="240" x2="22" y2="240" pathLength="100"/>
+        <line class="feeler feeler-4" x1="100" y1="240" x2="42" y2="285" pathLength="100"/>
+
+        <!-- Satellite data points (fade in, get pulled into Ramp core) -->
+        <circle class="satellite satellite-1" cx="62" cy="168" r="4" fill="#e94b35"/>
+        <circle class="satellite satellite-2" cx="38" cy="200" r="4" fill="#e94b35"/>
+        <circle class="satellite satellite-3" cx="22" cy="240" r="4" fill="#e94b35"/>
+        <circle class="satellite satellite-4" cx="42" cy="285" r="4" fill="#e94b35"/>
+
+        <!-- Ramp → Calibrate packets (CW short arc up the left side, drawn behind core so they emerge from inside) -->
+        <circle class="packet packet-1" r="3" fill="#e94b35"/>
+        <circle class="packet packet-2" r="3" fill="#e94b35"/>
+        <circle class="packet packet-3" r="3" fill="#e94b35"/>
+        <circle class="packet packet-4" r="3" fill="#e94b35"/>
+
+        <!-- Ramp core (at 9 o'clock) -->
+        <circle class="ramp-core" cx="100" cy="240" r="22" fill="#e94b35"/>
+
+        <!-- Calibrate ripple (12 o'clock on the loop) -->
+        <circle class="calibrate-ripple" cx="260" cy="80" r="14" fill="none" stroke="#e94b35" stroke-width="1.5"/>
+
+        <!-- Calibrate core -->
+        <circle class="calibrate-core" cx="260" cy="80" r="14" fill="#1a1a1a"/>
+
+        <!-- Tune core (static dark dot at 3 o'clock — the dial's body) -->
+        <circle cx="420" cy="240" r="14" fill="#1a1a1a"/>
+
+        <!-- Tune needle — small indicator inside Tune that rotates CW, advancing 45° per packet pass -->
+        <line class="tune-needle" x1="420" y1="240" x2="420" y2="230" stroke="#f4efe6" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Jet outer aura (6 o'clock on the loop) -->
+        <circle cx="260" cy="400" r="40" fill="#1a1a1a" opacity="0.08"/>
+
+        <!-- Jet middle ring -->
+        <circle cx="260" cy="400" r="28" fill="#1a1a1a"/>
+
+        <!-- Rotating accretion ring: slot 1 sits at P (directly left of Jet — where the CW
+             packet naturally arrives). Each successive slot rotates into P as packets land. -->
+        <g class="jet-ring">
+          <circle class="jet-slot jet-slot-1" cx="292.8" cy="396.6" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-2" cx="280.8" cy="374.4" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-3" cx="256.6" cy="367.2" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-4" cx="234.4" cy="379.2" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-5" cx="227.2" cy="403.4" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-6" cx="239.2" cy="425.6" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-7" cx="263.4" cy="432.8" r="4" fill="#e94b35"/>
+          <circle class="jet-slot jet-slot-8" cx="285.6" cy="420.8" r="4" fill="#e94b35"/>
+        </g>
+
+        <!-- Calibrate → Jet accretion packets (CW long arc through right and bottom of loop, then to slot) -->
+        <circle class="packet-acc packet-acc-1" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-2" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-3" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-4" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-5" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-6" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-7" r="5" fill="#e94b35"/>
+        <circle class="packet-acc packet-acc-8" r="5" fill="#e94b35"/>
+
+        <!-- Jet inner core (static orange) -->
+        <circle cx="260" cy="400" r="8" fill="#e94b35"/>
+
+        <!-- Return packet (CW short arc up the lower-left back to Ramp — closes the cycle) -->
+        <circle class="packet-return" r="6" fill="#e94b35"/>
+
+        <!-- Labels (radially outside the loop) -->
+        <text x="100" y="320" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">RAMP</text>
+        <text x="260" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">CALIBRATE</text>
+        <text x="455" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">TUNE</text>
+        <text x="260" y="460" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">JET</text>
+      </svg>
+    </div>
+    
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span>For mid-market B2B teams</span>
+    </div>
+    
+    <h1>
+      Be the answer<br>
+      when buyers<br>
+      ask <span class="rotator" id="rotator"><span class="rotator-sizer" aria-hidden="true">DuckDuckGo</span><span class="rotator-word">AI</span></span>
+    </h1>
+    
+    <p class="hero-sub">
+      We turn your website into a self-improving growth engine. Built for AI and Traditional search. Structured for conversion. Refined by real buyer behavior.
+    </p>
+    
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">
+        Get your visibility baseline
+        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#how" class="btn-secondary">
+        See how it works
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- PROOF BAND -->
+<div class="proof-band">
+  <div class="proof-band-inner">
+    <span>96% of pages get zero Google traffic</span>
+    <span>AI search up 527% YoY</span>
+    <span>89% of B2B buyers use AI search</span>
+    <span>5x conversion vs. traditional organic</span>
+    <span>Only 11% of domains cited by both ChatGPT &amp; Perplexity</span>
+    <span>96% of pages get zero Google traffic</span>
+    <span>AI search up 527% YoY</span>
+    <span>89% of B2B buyers use AI search</span>
+    <span>5x conversion vs. traditional organic</span>
+    <span>Only 11% of domains cited by both ChatGPT &amp; Perplexity</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROBLEM SECTION -->
+  <section class="problem">
+    <div class="container container--flush">
+      <div class="problem-grid">
+        <div>
+          <div class="section-eyebrow">The shift</div>
+          <h2 class="section-title">
+            Search is mission critical.<br>
+            Now it's changing.<br>
+            <span class="italic">Most companies have no idea.</span>
+          </h2>
+          <p class="section-intro">
+            Most companies never won legacy search. 96% of pages get zero Google traffic. Now buyers ask ChatGPT and Perplexity first, expecting answers, not links. Two surfaces, same converging signals, both unsolved for most. You don't catch up by trying harder. You need a system. You need Ramp<span class="slash">/</span>Jet.
+          </p>
+        </div>
+
+        <div class="problem-stats">
+          <div class="stat">
+            <div class="stat-number">96%</div>
+            <div class="stat-label">Of web pages get zero traffic from Google — most companies haven't even won legacy search</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">527%</div>
+            <div class="stat-label">YoY growth in AI-referred web sessions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5×</div>
+            <div class="stat-label">Higher conversion rate from AI search vs. traditional organic</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">89%</div>
+            <div class="stat-label">Of B2B buyers now use AI search throughout the buying process</div>
+          </div>
+        </div>
+      </div>
+      <p class="source-citation">
+        Sources: Previsible (2025), Exposure Ninja (2026), Forrester Buyers' Journey Survey (2024), Ahrefs (2023).
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS / TIERS -->
+  <section id="how">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">
+      Three phases.<br>
+      <span class="italic">One continuous loop.</span>
+    </h2>
+    <p class="section-intro">
+      We don't run a 90-day project and disappear. Ramp, Calibrate<span class="slash">/</span>Tune, Jet — then we re-run the process with a higher performance baseline. Each cycle compounds on the last, and your growth keeps pace with the way buyers actually search.
+    </p>
+    
+    <div class="tiers-grid">
+      
+      <div class="tier-card">
+        <div class="tier-number">
+          <span>PHASE 01</span>
+          <span>Configure</span>
+        </div>
+        <div class="tier-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 20 L3 20 L21 4 Z"/>
+            <path d="M21 20 L15 20 L21 15 Z" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3 class="tier-name">Ramp</h3>
+        <div class="tier-tagline">Get the house in order.</div>
+        <p class="tier-desc">
+          We rebuild your website for discovery and conversion — optimizing structure, content, and AI <span class="slash">/</span> Traditional search visibility from the ground up. Every cycle starts here.
+        </p>
+        <ul class="tier-list">
+          <li>Site audit &amp; technical fixes</li>
+          <li>AI search baseline across ChatGPT, Perplexity, Gemini, Google</li>
+          <li>Conversion-focused page structure</li>
+          <li>Analytics &amp; attribution setup</li>
+        </ul>
+      </div>
+      
+      <div class="tier-card">
+        <div class="tier-number">
+          <span>PHASE 02</span>
+          <span>Optimize</span>
+        </div>
+        <div class="tier-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 16 A 9 9 0 0 1 21 16"/>
+            <line x1="12" y1="16" x2="16.5" y2="9"/>
+            <circle cx="12" cy="16" r="1.5" fill="currentColor"/>
+            <line x1="5" y1="12" x2="6.5" y2="13"/>
+            <line x1="9" y1="9" x2="10" y2="10.5"/>
+            <line x1="15" y1="9" x2="14" y2="10.5"/>
+            <line x1="19" y1="12" x2="17.5" y2="13"/>
+          </svg>
+        </div>
+        <h3 class="tier-name">Calibrate<span class="slash">/</span>Tune</h3>
+        <div class="tier-tagline">Refine the system.</div>
+        <p class="tier-desc">
+          We create a flywheel between your site and your social channels — then refine everything based on real visitor behavior. This is where sustained growth compounds.
+        </p>
+        <ul class="tier-list">
+          <li>AI-cited content engineered for discovery</li>
+          <li>Web-to-social flywheel (LinkedIn &amp; beyond)</li>
+          <li>Continuous performance tuning</li>
+          <li>Conversion optimization from real data</li>
+        </ul>
+      </div>
+      
+      <div class="tier-card">
+        <div class="tier-number">
+          <span>PHASE 03</span>
+          <span>Accelerate</span>
+        </div>
+        <div class="tier-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 C 9 5 8 9 8 12 V17 H16 V12 C 16 9 15 5 12 2 Z"/>
+            <circle cx="12" cy="10" r="1.5"/>
+            <path d="M8 13 L4 17 H8"/>
+            <path d="M16 13 L20 17 H16"/>
+            <line x1="10" y1="17" x2="10" y2="20"/>
+            <line x1="14" y1="17" x2="14" y2="20"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+          </svg>
+        </div>
+        <h3 class="tier-name">Jet</h3>
+        <div class="tier-tagline">Turn traffic into pipeline.</div>
+        <p class="tier-desc">
+          As your visibility grows, we identify the companies already showing up — turning them into qualified prospects for your sales team, and signal that powers the next Ramp.
+        </p>
+        <ul class="tier-list">
+          <li>Company-level visitor identification</li>
+          <li>ICP-fit prospect lists</li>
+          <li>Outbound-ready intelligence</li>
+          <li>Leads delivered, fully attributed</li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- PITCH BLOCK -->
+  <section class="pitch-block">
+    <p class="pitch-quote">
+      <span class="pitch-mark">"</span>We don't optimize for rankings. We engineer a system that gets <span class="accent">continuously smarter</span> — every cycle, your business shows up sharper, in more places, in front of better buyers.
+    </p>
+  </section>
+
+  <!-- APPROACH / FLYWHEEL -->
+  <section id="approach" class="flywheel-section">
+    <div class="container container--flush">
+      <div class="section-eyebrow">The approach</div>
+      <h2 class="section-title">
+        Built for how<br>
+        <span class="italic">visibility actually works.</span>
+      </h2>
+      <p class="section-intro">
+        <strong>Our flywheel is the magic.</strong> Every cycle generates new signal — how buyers find you, what content earns citations, which companies are showing up — and sharpens the next cycle. Fixed fundamentals, live response — calibrated to a shifting search and discovery landscape. Most agencies sell you a project. We run a system.
+      </p>
+
+      <div class="flywheel-grid">
+        <div class="flywheel-points">
+
+          <div class="flywheel-point">
+            <div class="flywheel-point-num">01</div>
+            <div class="flywheel-point-content">
+              <h4>A flywheel, not a one-time project</h4>
+              <p>Could you use Ramp<span class="slash">/</span>Jet for one cycle and call it quits? Sure — and you'd achieve measurably better visibility. 90 days later you'll need a refresh. Each cycle compounds on the last, elevating your visibility and pipeline in the current context of search and discovery.</p>
+            </div>
+          </div>
+
+          <div class="flywheel-point">
+            <div class="flywheel-point-num">02</div>
+            <div class="flywheel-point-content">
+              <h4>Engineered for citation, not keywords</h4>
+              <p>Modern AI engines reward structure and substance over keyword stuffing. Our content is built to be extracted, summarized, and cited — across ChatGPT, Perplexity, Gemini, Google AI Overviews, and traditional search alike.</p>
+            </div>
+          </div>
+
+          <div class="flywheel-point">
+            <div class="flywheel-point-num">03</div>
+            <div class="flywheel-point-content">
+              <h4>Fresh signal feeds the next cycle</h4>
+              <p>The companies showing up on your site don't just become prospects — they tell us where to focus the next cycle. Real buyer behavior shapes the next round of content, the next round of site tweaks, the next conversion paths.</p>
+            </div>
+          </div>
+
+          <div class="flywheel-point">
+            <div class="flywheel-point-num">04</div>
+            <div class="flywheel-point-content">
+              <h4>We built this for ourselves</h4>
+              <p>We operate small teams across a few verticals. This methodology has been battle-tested in our own environments. We needed to create a system for visibility that allowed us to compete with the largest companies. This is that system.</p>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="flywheel-visual">
+          <p class="flywheel-caption flywheel-caption-top">Ramp<span class="slash">/</span>Jet continuous improvement ensures…</p>
+          <div class="flywheel-stage">
+          <svg viewBox="0 0 380 360" width="380" height="360" style="max-width: 100%; width: 100%; height: auto;" fill="none" aria-hidden="true">
+            <!-- Logarithmic spiral — starts tight at top, spirals outward over 4.25 turns,
+                 ends naturally at (190, 250) where the polyhedron sits. -->
+            <path d="M 195.0 120.0 L 195.0 121.4 L 194.5 122.8 L 193.7 124.1 L 192.5 125.1 L 191.1 125.8 L 189.4 126.1 L 187.7 125.9 L 186.0 125.2 L 184.5 124.0 L 183.4 122.5 L 182.8 120.6 L 182.6 118.5 L 183.1 116.4 L 184.1 114.5 L 185.7 112.9 L 187.8 111.7 L 190.1 111.1 L 192.7 111.2 L 195.2 112.0 L 197.4 113.5 L 199.2 115.6 L 200.4 118.3 L 200.8 121.2 L 200.4 124.3 L 199.1 127.3 L 197.0 129.8 L 194.2 131.8 L 190.8 132.9 L 187.2 133.1 L 183.5 132.2 L 180.0 130.3 L 177.2 127.4 L 175.1 123.7 L 174.2 119.5 L 174.4 115.0 L 175.9 110.6 L 178.6 106.6 L 182.5 103.5 L 187.2 101.4 L 192.5 100.7 L 198.0 101.6 L 203.2 103.9 L 207.7 107.8 L 211.1 112.8 L 213.0 118.9 L 213.2 125.4 L 211.5 132.0 L 208.0 138.0 L 202.8 143.1 L 196.2 146.6 L 188.6 148.2 L 180.6 147.7 L 172.8 144.8 L 165.8 139.8 L 160.3 132.9 L 156.8 124.4 L 155.8 114.9 L 157.4 105.2 L 161.8 96.0 L 168.7 88.1 L 177.9 82.3 L 188.7 79.0 L 200.3 78.9 L 211.9 82.0 L 222.6 88.4 L 231.4 97.9 L 237.5 109.7 L 240.2 123.3 L 239.0 137.5 L 233.7 151.3 L 224.6 163.6 L 212.0 173.2 L 196.8 179.2 L 180.0 180.8 L 162.7 177.6 L 146.5 169.6 L 132.7 157.0 L 122.5 140.5 L 117.0 121.2 L 117.0 100.5 L 123.0 79.8 L 134.7 61.0 L 151.8 45.6 L 173.1 35.2 L 197.3 30.8 L 222.6 33.3 L 247.1 43.1 L 268.6 59.7 L 285.3 82.3 L 295.5 109.6 L 297.9 139.6 L 291.8 170.2 L 277.0 198.9 L 254.1 223.2 L 224.5 240.8 L 190.0 250.0" stroke="#e94b35" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity="0.5"/>
+
+            <!-- Three signal dots travel the spiral, emerging at top center,
+                 spiraling outward, exiting straight down into the sphere. -->
+            <circle class="growth-signal growth-signal-1" r="3.5" fill="#e94b35"/>
+            <circle class="growth-signal growth-signal-2" r="3.5" fill="#e94b35"/>
+            <circle class="growth-signal growth-signal-3" r="3.5" fill="#e94b35"/>
+
+            <!-- Return signal — closes the loop: polyhedron → spiral center. -->
+            <circle class="return-signal" r="3.5" fill="#1a1a1a"/>
+
+          </svg>
+
+          <!-- Cube ↔ rhombic dodecahedron morph at the spiral's endpoint.
+               6 squares + 12 rhombuses; geometry driven entirely by --p. -->
+          <div class="morph-poly" aria-hidden="true">
+            <div class="a3d">
+              <div class="s3d s6hedron">
+                <div class="s2d s4gon s4gon--sq"></div>
+                <div class="s2d s4gon s4gon--sq"></div>
+                <div class="s2d s4gon s4gon--sq"></div>
+                <div class="s2d s4gon s4gon--sq"></div>
+                <div class="s2d s4gon s4gon--sq"></div>
+                <div class="s2d s4gon s4gon--sq"></div>
+              </div>
+              <div class="s3d s12hedron">
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+                <div class="s2d s4gon s4gon--rh"></div>
+              </div>
+            </div>
+          </div>
+          </div><!-- /.flywheel-stage -->
+          <p class="flywheel-caption flywheel-caption-bottom">Your visibility surface is optimized.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITES → WEBSURFACES -->
+  <section class="surface-shift">
+    <div class="container">
+      <h2 class="surface-shift-title">
+        Websites to <span class="italic"><strong>Websurfaces</strong></span>
+      </h2>
+      <p class="surface-shift-body">
+        Websites are paper maps. <strong>Websurfaces</strong> are living maps.<br>
+        The territory keeps changing, your surface should too.<br><br>
+        Ramp<span class="slash">/</span>Jet takes your web presence from a static sign to a living signal.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <div class="cta-section">
+      <div class="cta-eyebrow">Start with a baseline</div>
+      <h2 class="cta-title">
+        See how visible<br>
+        you are <span class="italic">today.</span>
+      </h2>
+      <form class="cta-form" id="cta-form">
+        <label for="cta-email" class="sr-only">Email address</label>
+        <input type="email" id="cta-email" class="cta-input" placeholder="you@company.com" required />
+        <button type="submit" class="btn-primary">
+          Get my baseline
+          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <p id="thanks" class="thanks-message" hidden>Thanks — your first cycle starts here. We'll be in touch within one business day.</p>
+      <div class="cta-note">No commitment. Your AI search baseline delivered within 5 business days — the first step in your first cycle.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-text">© 2026 Ramp<span class="slash">/</span>Jet. A self-improving growth engine for B2B.</div>
+      <div class="footer-links">
+        <a href="mailto:hello@rampjet.com">hello@rampjet.com</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Rotating headline — search engines & AI services people actually use
+  // Alternates AI-native and traditional to reinforce "everywhere your buyers search"
+  const words = [
+    'ChatGPT',
+    'Google',
+    'Perplexity',
+    'Bing',
+    'Gemini',
+    'Claude',
+    'Copilot',
+    'DuckDuckGo'
+  ];
+  
+  let currentIndex = 0;
+  const rotatorEl = document.getElementById('rotator');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function rotateWord() {
+    const currentWord = rotatorEl.querySelector('.rotator-word');
+    if (!currentWord) return;
+
+    currentWord.classList.add('exiting');
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % words.length;
+      const newWord = document.createElement('span');
+      newWord.className = 'rotator-word';
+      newWord.textContent = words[currentIndex];
+      currentWord.remove();
+      rotatorEl.appendChild(newWord);
+    }, 400);
+  }
+
+  if (!prefersReducedMotion) {
+    setTimeout(() => {
+      setInterval(rotateWord, 2200);
+    }, 1800);
+  }
+
+  // CTA form — show thank-you, hide form (no backend wired up yet)
+  const ctaForm = document.getElementById('cta-form');
+  const thanksMsg = document.getElementById('thanks');
+  if (ctaForm && thanksMsg) {
+    ctaForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      ctaForm.hidden = true;
+      thanksMsg.hidden = false;
+    });
+  }
+</script>
+
+</body>
+</html>
