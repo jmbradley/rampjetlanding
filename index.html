@@ -1408,6 +1408,21 @@ footer {
   z-index: 1;
 }
 
+/* Error message if Formspree submit fails */
+.form-error-message {
+  color: var(--cream);
+  margin-top: 24px;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.form-error-message a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 /* Visually hidden but accessible to screen readers */
 .sr-only {
   position: absolute;
@@ -1845,9 +1860,11 @@ footer {
         See how visible<br>
         you are <span class="italic">today.</span>
       </h2>
-      <form class="cta-form" id="cta-form">
+      <form class="cta-form" id="cta-form" action="https://formspree.io/f/xojryrdy" method="POST">
         <label for="cta-email" class="sr-only">Email address</label>
-        <input type="email" id="cta-email" class="cta-input" placeholder="you@company.com" required />
+        <input type="email" id="cta-email" name="email" class="cta-input" placeholder="you@company.com" required />
+        <!-- Honeypot field to deter spam bots; real users won't fill this -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
         <button type="submit" class="btn-primary">
           Get my baseline
           <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -1856,6 +1873,7 @@ footer {
         </button>
       </form>
       <p id="thanks" class="thanks-message" hidden>Thanks — your first cycle starts here. We'll be in touch within one business day.</p>
+      <p id="form-error" class="form-error-message" hidden>Hmm, something went wrong sending that. Please email us at <a href="mailto:joseph@rampjet.ai">joseph@rampjet.ai</a>.</p>
       <div class="cta-note">No commitment. Your AI search baseline delivered within 5 business days — the first step in your first cycle.</div>
     </div>
   </section>
@@ -1909,14 +1927,33 @@ footer {
     }, 1800);
   }
 
-  // CTA form — show thank-you, hide form (no backend wired up yet)
+  // CTA form — submit to Formspree via fetch, show inline thanks (or error)
   const ctaForm = document.getElementById('cta-form');
   const thanksMsg = document.getElementById('thanks');
-  if (ctaForm && thanksMsg) {
-    ctaForm.addEventListener('submit', (e) => {
+  const errorMsg = document.getElementById('form-error');
+  if (ctaForm && thanksMsg && errorMsg) {
+    ctaForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      ctaForm.hidden = true;
-      thanksMsg.hidden = false;
+      const submitBtn = ctaForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      errorMsg.hidden = true;
+      try {
+        const res = await fetch(ctaForm.action, {
+          method: 'POST',
+          body: new FormData(ctaForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          ctaForm.hidden = true;
+          thanksMsg.hidden = false;
+        } else {
+          errorMsg.hidden = false;
+          submitBtn.disabled = false;
+        }
+      } catch (err) {
+        errorMsg.hidden = false;
+        submitBtn.disabled = false;
+      }
     });
   }
 </script>
