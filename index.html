@@ -1906,7 +1906,13 @@ footer {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function rotateWord() {
-    const currentWord = rotatorEl.querySelector('.rotator-word');
+    // Defensive: if browser tab throttling left orphan words stacked up,
+    // keep only the first as the "current" word and remove the rest.
+    const allWords = rotatorEl.querySelectorAll('.rotator-word');
+    for (let i = 1; i < allWords.length; i++) {
+      allWords[i].remove();
+    }
+    const currentWord = allWords[0];
     if (!currentWord) return;
 
     currentWord.classList.add('exiting');
@@ -1916,15 +1922,24 @@ footer {
       const newWord = document.createElement('span');
       newWord.className = 'rotator-word';
       newWord.textContent = words[currentIndex];
-      currentWord.remove();
+      // Final cleanup: nuke any remaining rotator-word elements (including
+      // currentWord) before appending the next, so only one ever lives.
+      rotatorEl.querySelectorAll('.rotator-word').forEach((el) => el.remove());
       rotatorEl.appendChild(newWord);
     }, 400);
   }
 
-  if (!prefersReducedMotion) {
+  // Chained setTimeout (not setInterval) so cycles can never queue up
+  // during tab throttling or main-thread pressure.
+  function scheduleNextRotation() {
     setTimeout(() => {
-      setInterval(rotateWord, 2200);
-    }, 1800);
+      rotateWord();
+      scheduleNextRotation();
+    }, 2200);
+  }
+
+  if (!prefersReducedMotion) {
+    setTimeout(scheduleNextRotation, 1800);
   }
 
   // CTA form — submit to Formspree via fetch, show inline thanks (or error)
