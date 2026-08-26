@@ -13,6 +13,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Ramp/Jet builds the systems owner-operated industrial companies run on when the owner isn't in the room — the website, the demand engine behind it, and the quoting, tracking, and follow-up that still live in spreadsheets and memory. Everything from the first search to the ERP.">
 <title>Ramp/Jet — Systems for industrial companies</title>
+<link rel="canonical" href="https://rampjet.ai/">
+<meta name="theme-color" content="#0E1013">
+
+<!-- Social preview. Without these a shared link renders as a bare URL. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ramp/Jet">
+<meta property="og:url" content="https://rampjet.ai/">
+<meta property="og:title" content="Systems for the half that runs on memory">
+<meta property="og:description" content="Ramp/Jet builds the systems owner-operated industrial companies run on when the owner isn't in the room — the website, the demand engine behind it, and the quoting, tracking, and follow-up that still live in spreadsheets and memory.">
+<meta property="og:image" content="https://rampjet.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ramp/Jet — systems for owner-operated industrial companies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Systems for the half that runs on memory">
+<meta name="twitter:description" content="Ramp/Jet builds the systems owner-operated industrial companies run on when the owner isn't in the room — the website, the demand engine behind it, and the quoting, tracking, and follow-up that still live in spreadsheets and memory.">
+<meta name="twitter:image" content="https://rampjet.ai/og-image.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
@@ -20,6 +37,70 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://rampjet.ai/#organization",
+  "name": "Ramp/Jet",
+  "alternateName": "Rampjet",
+  "url": "https://rampjet.ai/",
+  "logo": "https://rampjet.ai/apple-touch-icon.png",
+  "image": "https://rampjet.ai/og-image.png",
+  "email": "joseph@rampjet.ai",
+  "slogan": "Systems for the half that runs on memory",
+  "description": "Ramp/Jet builds the systems owner-operated industrial companies run on when the owner isn't in the room: the website, the demand engine behind it, and the quoting, tracking, and follow-up work that still runs on spreadsheets and memory. Scope runs from the first search to the ERP and stops where the ERP begins.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "Owner-operated industrial companies, roughly $5-50M",
+    "description": "Machine shops, fabricators, distributors, contract manufacturers and specialty suppliers where sales, quoting and customer knowledge still route through one or two people."
+  },
+  "knowsAbout": [
+    "Industrial website design",
+    "Lead capture and follow-up",
+    "Quoting systems",
+    "Job tracking",
+    "Customer records",
+    "Key-person risk"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Rework",
+      "category": "Website",
+      "description": "A professional site rebuilt in two days from the first call. Brand system, hosting and a quarterly inspection included.",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "2000",
+        "priceCurrency": "USD",
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Reach",
+      "category": "Demand engine",
+      "description": "Every inquiry - web form, email, phone - captured, routed to the right person and followed up on a schedule that does not depend on who is busy. Billed monthly."
+    },
+    {
+      "@type": "Offer",
+      "name": "Run",
+      "category": "Operations",
+      "description": "One process at a time - quoting, job tracking, customer records - moved out of one person's head into a system anyone on the team can run. Fixed price per project, scoped first."
+    },
+    {
+      "@type": "Offer",
+      "name": "The Full Build",
+      "category": "All three products",
+      "description": "Rework, Reach and Run built in order on one work order, for less than three separate engagements."
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --steel:#0E1013; --steel-2:#1B1F23; --steel-3:#262B31;
@@ -61,6 +142,28 @@
   .nav ul a:hover{color:var(--paper)}
   .nav .btn{padding:12px 18px}
   @media (max-width:820px){.nav ul{display:none}}
+
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--orange);color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;text-decoration:none}
+  .skip:focus{left:0}
+
+  /* MOBILE MENU */
+  header{position:relative}
+  .menu-btn{display:none;background:transparent;border:2px solid var(--paper);color:var(--paper);font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+  .menu-btn:hover{background:var(--paper);color:var(--steel)}
+  @media (max-width:820px){
+    /* brand + Menu + CTA must share 375px without the CTA wrapping */
+    .nav{gap:10px}
+    .brand{font-size:20px}
+    .nav .btn{padding:10px 12px;font-size:11px;letter-spacing:.04em;white-space:nowrap}
+    .menu-btn{display:inline-flex;order:2;padding:9px 11px;font-size:11px;white-space:nowrap}
+    .nav .btn{order:3}
+    .nav ul{display:none}
+    .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:74px;left:0;right:0;background:var(--steel);border-top:1px solid var(--line-dk);border-bottom:2px solid var(--orange);padding:0;z-index:60}
+    .nav.open ul li{border-top:1px solid var(--line-dk)}
+    .nav.open ul li:first-child{border-top:0}
+    .nav.open ul a{display:block;padding:18px 28px;color:var(--paper)}
+    .nav.open ul a:hover{background:var(--steel-2)}
+  }
 
   /* HERO */
   .hero{background:var(--steel);color:var(--paper);padding:88px 0 96px;position:relative;overflow:hidden}
@@ -524,10 +627,13 @@
 </head>
 <body id="top">
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header>
-  <div class="wrap nav">
+  <div class="wrap nav" id="nav">
     <a class="brand" href="#top" aria-label="Rampjet home">Ramp<b>/</b>Jet</a>
-    <ul>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul id="nav-menu">
       <li><a href="#map">Where we work</a></li>
       <li><a href="#rework">Rework</a></li>
       <li><a href="#reach">Reach</a></li>
@@ -538,7 +644,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- HERO -->
   <section class="hero">
@@ -934,6 +1040,25 @@
       if(!items) return;
       items.value=[].slice.call(form.querySelectorAll('input:checked')).map(function(i){return i.value}).join(', ');
     });
+  })();
+
+  // Mobile menu — the nav links are display:none under 820px without this
+  (function(){
+    var nav=document.getElementById('nav'), btn=document.getElementById('menu-btn');
+    if(!nav||!btn) return;
+    function set(open){
+      nav.classList.toggle('open',open);
+      btn.setAttribute('aria-expanded',String(open));
+      btn.textContent=open?'Close':'Menu';
+    }
+    btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
+    // a jump link inside a panel that stays open would cover the target
+    nav.addEventListener('click',function(e){ if(e.target.closest('#nav-menu a')) set(false); });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && btn.getAttribute('aria-expanded')==='true'){ set(false); btn.focus(); }
+    });
+    // reset state if the viewport grows past the breakpoint while open
+    window.addEventListener('resize',function(){ if(window.innerWidth>820) set(false); });
   })();
 
   // Absence check — count what still happens without the owner
