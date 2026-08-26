@@ -601,12 +601,12 @@
       <form class="sheet" id="absence" onsubmit="return false" aria-label="Three-week absence check">
         <span class="stamp">Be honest</span>
         <div class="head"><span class="t">Absence check</span><span class="n">RJ-2026-0002</span></div>
-        <div class="hint">You’re out three weeks &mdash; check the ones that still happen</div>
+        <div class="hint">You’re out for three weeks &mdash; check the ones that still happen</div>
         <label class="chk"><input type="checkbox"><span>A new inquiry gets answered the same day.</span></label>
         <label class="chk"><input type="checkbox"><span>A quote goes out, at the right price.</span></label>
         <label class="chk"><input type="checkbox"><span>A customer asks what they paid last time &mdash; someone can tell them.</span></label>
-        <label class="chk"><input type="checkbox"><span>A customer calls about a job in progress and someone can answer.</span></label>
-        <label class="chk"><input type="checkbox"><span>The guy who called twice gets called back.</span></label>
+        <label class="chk"><input type="checkbox"><span>Someone can say where a job stands without asking you.</span></label>
+        <label class="chk"><input type="checkbox"><span>Whoever called twice gets a call back.</span></label>
         <div class="res">
           <div class="lbl">Result</div>
           <div class="val" id="absence-res">Nothing checked yet.</div>
@@ -946,7 +946,7 @@
       var gap=boxes.length-kept;
       if(kept===0){ out.innerHTML='Nothing checked yet.'; return; }
       if(gap===0){ out.innerHTML='<b>All five.</b> Rare \u2014 and worth protecting.'; return; }
-      out.innerHTML='<b>'+gap+' of '+boxes.length+'</b> still wait on one person.<br>Those are the ones we build.';
+      out.innerHTML='<b>'+gap+' of '+boxes.length+'</b> still wait on one person.<br>That\u2019s what we build.';
     });
   })();
 
