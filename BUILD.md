@@ -262,6 +262,11 @@ Three places this build knowingly departs from it:
 1. **The orange.** DESIGN.md §3.1 specifies `#C2603F`; we kept the brighter `#e94b35` from the previous site.
 2. **The flywheel section.** Not in the spec at all — added to give the animation a home.
 3. **The absence check.** Not in the spec. It implements the succession through-line, staying inside the §1 rule that keeps sale language off the house page.
+4. **Four copy edits** made after a coherence read, so DESIGN.md's verbatim copy no longer matches the page:
+   - §4.5's `No AI as a headline` → **`No AI for its own sake`**. The original is a copywriting rule from §1 published as a customer promise; an owner reading it asks "headline of *what*?"
+   - Reach's §4.4 P1 lost its closing sentence, *"The system watches what works and adjusts."* It was the only unfalsifiable claim on a page that otherwise commits to checkable numbers — and it sat one section above a list that swears off exactly that. Not replaced: the preceding sentence already opens "You see…", so a concrete substitute collided.
+   - The absence check's fourth item was *"The job that shipped Tuesday gets invoiced."* Invoicing is past the ERP line, so the section was promising work the territory map says we never do.
+   - `Start where it hurts` (products intro) → `Start with the one you'd fix first`, so "hurts" lands twice rather than three times.
 
 The HTML mock the build derives from (`rampjet-homepage.html`) is **not** in the repo, deliberately: GitHub Pages serves every file at the domain root, so a second homepage would go live at `rampjet.ai/rampjet-homepage.html`. It's in the original delivery zip if you need it.
 
