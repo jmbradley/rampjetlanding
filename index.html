@@ -200,6 +200,7 @@
   .sheet .head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:2px solid var(--ink);background:var(--bone)}
   .sheet .head .t{font-family:var(--stamp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
   .sheet .head .n{font-size:12px;color:var(--mute)}
+  .sheet .head .honest{font-family:var(--stamp);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-dk)}
   .sheet .hint{padding:14px 18px 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
   .chk{display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;padding:13px 18px;border-top:1px dashed var(--line);cursor:pointer;user-select:none;font-family:var(--sans);font-size:15px;color:#3A3F44}
   .chk:hover{background:#F2EEE7}
@@ -599,8 +600,7 @@
       </div>
 
       <form class="sheet" id="absence" onsubmit="return false" aria-label="Three-week absence check">
-        <span class="stamp">Be honest</span>
-        <div class="head"><span class="t">Absence check</span><span class="n">RJ-2026-0002</span></div>
+        <div class="head"><span class="t">Absence check</span><span class="n honest">Be honest</span></div>
         <div class="hint">You’re out for three weeks &mdash; check the ones that still happen</div>
         <label class="chk"><input type="checkbox"><span>A new inquiry gets answered the same day.</span></label>
         <label class="chk"><input type="checkbox"><span>A quote goes out, at the right price.</span></label>
