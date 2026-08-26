@@ -239,7 +239,9 @@ PNG fallbacks exist because **Safari doesn't support SVG favicons**. They can't 
 - Reduced motion respected everywhere; see the flywheel note above.
 - Check every change at **390px and 1280px**. The territory map's mobile collapse and the two work-order cards are the most likely to break.
 
-The territory map collapses at ≤980px to a linear list in this order: stage 1, Rework, stage 2, Reach, stage 3, stage 4, Run, stage 5, stage 6, ERP — via CSS `order`.
+The territory map collapses at ≤980px to a linear list via CSS `order`, with each claim ahead of the stages it covers: Rework, stage 1, stage 2, Reach, stage 3, stage 4, Run, stage 5, stage 6, ERP.
+
+**Rework spans stages 1–2, not just stage 2.** DESIGN.md §4.2 leaves stage 1 ("a buyer searches") unclaimed with a "Not ours" cell; that cell is gone, because Rework also covers content and social work that acts before anyone reaches the site. The page doesn't name those modules — the claim bar is the only place it shows.
 
 ---
 
