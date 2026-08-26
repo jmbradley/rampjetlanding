@@ -56,6 +56,25 @@ Then open `http://localhost:8000`. Any static server works.
 
 ---
 
+## Open items — start here
+
+Known-unfinished work, most consequential first. Details are in the sections below.
+
+| # | Item | Notes |
+|---|---|---|
+| 1 | **`/advisors` doesn't exist; the footer link points at `#`** | It's the *only* public doorway to advisor content, and it goes nowhere. DESIGN.md §6 has the full spec: move the Rework page's advisor section, Transfer Packet, confidentiality/fee notes and the two advisor FAQ items there, largely as written. This is the one page where exit and sale language is allowed — see §6 before writing any of it. Keep it out of the header nav; footer link only. |
+| 2 | **Reach `$750/mo` and Run `from $3,500` are placeholders** | Marked `[PLACEHOLDER]` in DESIGN.md §7, currently rendering as firm prices on a public page. Rework's $2,000 is real. When the numbers firm up, also add `priceSpecification` blocks to those two offers in the JSON-LD — they were deliberately left out so AI search wouldn't quote provisional prices as fact. |
+| 3 | **No proof/testimonial section** | Removed rather than ship the doc's illustrative quotes as real. DESIGN.md §4.8 specifies one; add it back when there are genuine statements or screenshots. |
+| 4 | **Product pages don't exist** | Nav and footer point at on-page anchors (`#rework`, `#reach`, `#run`). When `/rework` etc. ship, the anchors move with them. Template is DESIGN.md §5. |
+
+### Before you push
+
+`main` is the GitHub Pages source — **a push to `main` deploys to rampjet.ai**. Branch for anything unfinished.
+
+⚠️ **The GitHub repo is public.** `_config.yml` keeps `BUILD.md` and `DESIGN.md` off the *published site* (rampjet.ai/DESIGN.md is 404), but that is not the same as private: both files are readable by anyone at `raw.githubusercontent.com/jmbradley/rampjetlanding/main/DESIGN.md`. DESIGN.md contains exit/sale-prep positioning and unpublished prices. Treat anything committed here as public.
+
+---
+
 ## The through-line
 
 Three beats, in this order, and the page depends on all three:
