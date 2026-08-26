@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Ramp/Jet">
+  <style>
+    .ink { fill: #14171A }
+    /* the two dark nodes would disappear on a dark tab bar */
+    @media (prefers-color-scheme: dark) { .ink { fill: #F9F6F1 } }
+  </style>
+  <g fill="#e94b35">
+    <circle cx="58.80" cy="17.16" r="2.0"/>
+    <circle cx="67.00" cy="20.56" r="2.0"/>
+    <circle cx="74.04" cy="25.96" r="2.0"/>
+    <circle cx="79.44" cy="33.00" r="2.0"/>
+    <circle cx="82.84" cy="41.20" r="2.0"/>
+    <circle cx="82.84" cy="58.80" r="2.0"/>
+    <circle cx="79.44" cy="67.00" r="2.0"/>
+    <circle cx="74.04" cy="74.04" r="2.0"/>
+    <circle cx="67.00" cy="79.44" r="2.0"/>
+    <circle cx="58.80" cy="82.84" r="2.0"/>
+    <circle cx="41.20" cy="82.84" r="2.0"/>
+    <circle cx="33.00" cy="79.44" r="2.0"/>
+    <circle cx="25.96" cy="74.04" r="2.0"/>
+    <circle cx="20.56" cy="67.00" r="2.0"/>
+    <circle cx="17.16" cy="58.80" r="2.0"/>
+    <circle cx="17.16" cy="41.20" r="2.0"/>
+    <circle cx="20.56" cy="33.00" r="2.0"/>
+    <circle cx="25.96" cy="25.96" r="2.0"/>
+    <circle cx="33.00" cy="20.56" r="2.0"/>
+    <circle cx="41.20" cy="17.16" r="2.0"/>
+  </g>
+  <!-- Ramp — 9 o'clock, aura kept translucent so it works on any backdrop -->
+  <circle cx="16" cy="50" r="13.5" fill="#e94b35" opacity="0.18"/>
+  <circle cx="16" cy="50" r="8"    fill="#e94b35"/>
+  <!-- Calibrate — 12 o'clock -->
+  <circle cx="50" cy="16" r="6.5"  class="ink"/>
+  <!-- Tune — 3 o'clock -->
+  <circle cx="84" cy="50" r="6"    fill="#e94b35"/>
+  <!-- Jet — 6 o'clock, accreted core -->
+  <circle cx="50" cy="84" r="9.5"  class="ink"/>
+  <circle cx="50" cy="84" r="4"    fill="#e94b35"/>
+</svg>

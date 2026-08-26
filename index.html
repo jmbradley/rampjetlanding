@@ -1,355 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZFPZGVQ6W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZZFPZGVQ6W');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Ramp/Jet turns your website into a self-improving growth engine. Engineered for discovery across AI search and Google, structured for conversion, continuously refined based on real visitor behavior. For mid-market B2B teams." />
-<title>Ramp/Jet — A self-improving growth engine for B2B</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ramp/Jet builds the systems owner-operated industrial companies run on when the owner isn't in the room — the website, the demand engine behind it, and the quoting, tracking, and follow-up that still live in spreadsheets and memory. Everything from the first search to the ERP.">
+<title>Ramp/Jet — Systems for industrial companies</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream: #f4efe6;
-  --cream-deep: #ebe4d6;
-  --ink: #1a1a1a;
-  --ink-soft: #2c2926;
-  --muted: #6b655c;
-  --line: #d9d2c4;
-  --accent: #e94b35;
-  --accent-deep: #c93a25;
-  --accent-soft: #fae3dd;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* Subtle paper texture */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(233, 75, 53, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(233, 75, 53, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.container.container--flush { padding: 0; }
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-  position: relative;
-  z-index: 1;
-}
-
-/* NAV */
-nav {
-  padding: 32px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: 'Fraunces', serif;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.logo .slash,
-.tier-name .slash,
-.section-intro .slash,
-.tier-desc .slash,
-.footer-text .slash,
-.flywheel-caption .slash,
-.surface-shift-body .slash,
-.flywheel-point-content .slash {
-  color: var(--accent);
-  font-weight: 400;
-  margin: 0 -1px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: var(--cream) !important;
-  padding: 10px 22px;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.nav-cta:hover {
-  background: var(--accent-deep);
-  color: var(--cream) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(233, 75, 53, 0.25);
-}
-
-/* HERO */
-.hero {
-  padding: 80px 0 120px;
-  position: relative;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 32px;
-  padding: 8px 16px;
-  background: var(--cream-deep);
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.hero-eyebrow .dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: pulse 2s ease infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
-}
-
-.hero h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(56px, 9vw, 124px);
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  margin-bottom: 40px;
-  font-variation-settings: "opsz" 144;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.1s forwards;
-}
-
-.hero h1 .accent {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 300;
-}
-
-/* Rotating word styling */
-.rotator {
-  display: inline-block;
-  position: relative;
-  vertical-align: baseline;
-  color: var(--accent);
-}
-
-.rotator-sizer {
-  display: inline-block;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.rotator-word {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: inline-block;
-  white-space: nowrap;
-  animation: rotateIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.rotator-word.exiting {
-  animation: rotateOut 0.4s cubic-bezier(0.55, 0, 0.55, 1) forwards;
-}
-
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: translateY(18px);
-    filter: blur(4px);
+  :root{
+    --steel:#0E1013; --steel-2:#1B1F23; --steel-3:#262B31;
+    --paper:#F9F6F1; --bone:#ECEAE4; --ink:#14171A; --mute:#6B7076; --mute-lt:#A9AEB3;
+    --orange:#e94b35; --orange-dk:#bd3420; --orange-lt:#f26550;
+    --line:rgba(20,23,26,.14); --line-dk:rgba(249,246,241,.14);
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --disp:"Archivo",var(--sans);
+    --stamp:"Space Mono",var(--mono);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .spec{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+  .spec.on{color:var(--orange)}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.01em;line-height:1.02}
+  h1{font-size:clamp(44px,6vw,76px);font-weight:900;text-transform:uppercase}
+  h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;text-transform:uppercase}
+  h3{font-size:clamp(24px,2.8vw,36px);font-weight:800}
+  p.sub{font-size:19px;color:#3A3F44;max-width:58ch}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:16px 22px;text-decoration:none;border:0;cursor:pointer}
+  .btn:hover{background:var(--orange-lt)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn svg{width:16px;height:16px}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+  /* NAV */
+  header{background:var(--steel);color:var(--paper);border-bottom:1px solid var(--line-dk)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+  .brand{font-family:var(--disp);font-weight:900;font-size:26px;letter-spacing:.04em;text-decoration:none;text-transform:uppercase}
+  .brand b{color:var(--orange);font-weight:900}
+  .nav ul{display:flex;gap:28px;list-style:none;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  .nav ul a{text-decoration:none;color:var(--mute-lt)}
+  .nav ul a:hover{color:var(--paper)}
+  .nav .btn{padding:12px 18px}
+  @media (max-width:820px){.nav ul{display:none}}
+
+  /* HERO */
+  .hero{background:var(--steel);color:var(--paper);padding:88px 0 96px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero h1 span{color:var(--orange)}
+  .hero p.sub{color:#C9CDD1;margin:26px 0 34px}
+  .hero .row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .hero .row .spec{color:var(--mute-lt)}
+  @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding:56px 0 64px}}
+
+  /* ORDER FORM — the signature */
+  .order{background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--orange);font-family:var(--mono)}
+  .order .head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:2px solid var(--ink);background:var(--bone)}
+  .order .head .t{font-family:var(--stamp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .order .head .n{font-size:12px;color:var(--mute)}
+  .order .hint{padding:14px 18px 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .line{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:start;padding:14px 18px;border-top:1px dashed var(--line);cursor:pointer;user-select:none}
+  .line:hover{background:#F2EEE7}
+  .line input{appearance:none;width:22px;height:22px;border:2px solid var(--ink);background:#fff;margin-top:2px;cursor:pointer;position:relative}
+  .line input:checked{background:var(--orange);border-color:var(--orange)}
+  .line input:checked::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+  .line .nm{display:block;font-family:var(--disp);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.02em}
+  .line .ds{display:block;font-family:var(--sans);font-size:14px;color:#3A3F44;margin-top:2px}
+  .line .pr{font-size:13px;text-align:right;white-space:nowrap;color:var(--ink)}
+  .line .pr small{display:block;color:var(--mute);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .order .tot{border-top:2px solid var(--ink);padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;min-height:78px}
+  .order .tot .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .order .tot .val{font-family:var(--sans);font-size:15px;margin-top:4px;line-height:1.35}
+  .order .tot .val b{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:17px;color:var(--orange-dk)}
+  .order .tot .btn{padding:12px 16px;font-size:12px}
+  .stamp{position:absolute;right:14px;top:-14px;font-family:var(--stamp);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);background:var(--paper);padding:2px 8px;border:1px solid var(--orange);transform:rotate(2deg)}
+  .order{position:relative}
+
+
+  /* TERRITORY MAP */
+  .map{background:var(--bone);padding:72px 0;border-bottom:1px solid var(--line)}
+  .map .intro{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+  .map .intro p{font-size:17px;color:#3A3F44;max-width:44ch}
+  .terr{display:grid;grid-template-columns:repeat(6,1fr) 1.15fr;grid-template-rows:auto auto;gap:0;border:2px solid var(--ink);background:#fff}
+  .claim{grid-row:1;padding:14px 16px 12px;border-bottom:2px solid var(--ink);border-left:2px solid var(--ink);font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:20px;letter-spacing:.02em;position:relative}
+  .claim small{display:block;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.12em;color:var(--mute);margin-top:2px;text-transform:uppercase}
+  .claim::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--orange)}
+  .claim.c1{grid-column:2/3;border-left:0}
+  .claim.c2{grid-column:3/5}
+  .claim.c3{grid-column:5/7}
+  .claim.none{grid-column:1/2;border-left:0;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.12em;color:var(--mute);padding-top:24px}
+  .claim.none::before{display:none}
+  .st{grid-row:2;padding:22px 16px 24px;border-left:1px dashed var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);position:relative}
+  .st:first-of-type{border-left:0}
+  .st b{display:block;font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink);margin-top:6px;line-height:1.25}
+  .st::after{content:"→";position:absolute;right:-9px;top:26px;background:#fff;color:var(--orange);font-weight:600;padding:0 2px;z-index:1}
+  .st.last::after{display:none}
+  .erp{grid-column:7;grid-row:1/3;background:var(--steel);color:var(--paper);padding:22px 20px;border-left:4px solid var(--orange);display:flex;flex-direction:column;justify-content:center}
+  .erp .k{font-family:var(--stamp);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+  .erp b{font-family:var(--disp);font-weight:900;font-size:24px;text-transform:uppercase;display:block;margin:8px 0 6px;line-height:1}
+  .erp p{font-size:14px;color:#C9CDD1;line-height:1.4}
+  .map .legend{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.04em}
+  @media (max-width:980px){
+    .terr{grid-template-columns:1fr;grid-template-rows:none}
+    .terr .claim,.terr .st,.terr .erp{grid-column:1;grid-row:auto;border-left:0}
+    .terr .claim{border-top:2px solid var(--ink);border-bottom:0}
+    .terr .claim.none{display:none}
+    .terr .st{border-top:1px dashed var(--line)}
+    .terr .st::after{display:none}
+    .terr .erp{border-top:2px solid var(--ink)}
+    .terr .s1{order:1}.terr .c1{order:2}.terr .s2{order:3}.terr .c2{order:4}.terr .s3{order:5}.terr .s4{order:6}.terr .c3{order:7}.terr .s5{order:8}.terr .s6{order:9}.terr .erp{order:10}
   }
-}
 
-@keyframes rotateOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-18px);
-    filter: blur(4px);
-  }
-}
+  /* WHO */
+  .who{padding:84px 0;border-bottom:1px solid var(--line)}
+  .who .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+  .who h2{margin-top:10px}
+  .who .list{font-size:18px;color:#3A3F44}
+  .who .list li{list-style:none;padding:16px 0 16px 34px;border-top:1px solid var(--line);position:relative}
+  .who .list li:last-child{border-bottom:1px solid var(--line)}
+  .who .list li::before{content:"";position:absolute;left:0;top:24px;width:16px;height:2px;background:var(--orange)}
+  .who .list li b{color:var(--ink);font-weight:600}
+  @media (max-width:900px){.who .grid{grid-template-columns:1fr;gap:28px}}
 
-.hero h1 .underline-mark {
-  position: relative;
-  display: inline-block;
-}
+  /* PRODUCTS */
+  .products{padding:96px 0 40px}
+  .products .intro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+  .prod{display:grid;grid-template-columns:200px 1fr 300px;gap:40px;padding:48px 0;border-top:2px solid var(--ink)}
+  .prod:last-of-type{border-bottom:2px solid var(--ink)}
+  .prod .tag{font-family:var(--disp);font-weight:900;font-size:34px;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+  .prod .tag small{display:block;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;color:var(--mute);margin-top:8px}
+  .prod .tag .sw{display:block;width:44px;height:8px;background:var(--orange);margin-bottom:14px}
+  .prod .say{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3.2vw,40px);line-height:1.08;margin-bottom:18px}
+  .prod .say::before{content:"“";color:var(--orange)}
+  .prod .say::after{content:"”";color:var(--orange)}
+  .prod p{font-size:17px;color:#3A3F44;max-width:60ch}
+  .prod p+p{margin-top:12px}
+  .card{background:var(--bone);border:1px solid var(--line);font-family:var(--mono);font-size:13px}
+  .card .r{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px dashed var(--line)}
+  .card .r:first-child{border-top:0;background:var(--ink);color:var(--paper);letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+  .card .r .k{color:var(--mute);text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .card .r .v{text-align:right}
+  .card .r.no .v{color:var(--orange-dk)}
+  .card .r .v b{font-family:var(--disp);font-size:18px;font-weight:800}
+  .card .cta{padding:14px 16px;border-top:1px solid var(--line)}
+  .card .cta a{font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--orange-dk)}
+  @media (max-width:980px){.prod{grid-template-columns:1fr;gap:22px;padding:36px 0}}
 
-.hero h1 .underline-mark::after {
-  content: '';
-  position: absolute;
-  bottom: 0.08em;
-  left: -2%;
-  width: 104%;
-  height: 8px;
-  background: var(--accent);
-  opacity: 0.2;
-  z-index: -1;
-  transform: skewX(-3deg);
-}
+  /* DONT */
+  .dont{background:var(--steel);color:var(--paper);padding:72px 0}
+  .dont .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+  .dont ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .dont li{font-family:var(--disp);font-weight:700;font-size:22px;padding:16px 0 16px 38px;border-top:1px solid var(--line-dk);position:relative;text-transform:uppercase;letter-spacing:.01em}
+  .dont li::before{content:"✕";position:absolute;left:0;top:15px;color:var(--orange);font-family:var(--mono);font-weight:600}
+  .dont p{color:#C9CDD1;font-size:17px;margin-top:18px;max-width:46ch}
+  @media (max-width:900px){.dont .grid{grid-template-columns:1fr}.dont ul{grid-template-columns:1fr}}
 
-.hero-sub {
-  font-size: 22px;
-  line-height: 1.45;
-  max-width: 620px;
-  color: var(--ink-soft);
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.25s forwards;
-}
+  /* FULL BUILD */
+  .full{padding:96px 0}
+  .full .top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:40px}
+  .route{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink);background:#fff}
+  .op{padding:26px 24px 28px;border-left:2px solid var(--ink);position:relative}
+  .op:first-child{border-left:0}
+  .op .n{font-family:var(--stamp);font-size:12px;letter-spacing:.16em;color:var(--orange);text-transform:uppercase}
+  .op h3{margin:10px 0 6px;text-transform:uppercase}
+  .op .w{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+  .op p{font-size:15px;color:#3A3F44;margin-top:12px}
+  .op::after{content:"→";position:absolute;right:-13px;top:28px;background:#fff;color:var(--ink);font-family:var(--mono);font-weight:600;z-index:1;padding:0 3px}
+  .op:last-child::after{display:none}
+  .full .foot{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border:2px solid var(--ink);border-top:0;background:var(--bone);padding:20px 24px;font-family:var(--mono);font-size:14px}
+  .full .foot b{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:18px}
+  @media (max-width:900px){.full .top{grid-template-columns:1fr}.route{grid-template-columns:1fr}.op{border-left:0;border-top:2px solid var(--ink)}.op:first-child{border-top:0}.op::after{display:none}.full .foot{grid-template-columns:1fr}}
 
-.hero-cta-row {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.4s forwards;
-}
+  /* PROOF */
+  .proof{background:var(--bone);padding:84px 0;border-top:1px solid var(--line)}
+  .proof .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+  .q{background:var(--paper);border:1px solid var(--line);padding:26px 26px 22px;position:relative}
+  .q::before{content:"";position:absolute;left:0;top:0;width:6px;height:100%;background:var(--orange)}
+  .q p{font-family:var(--disp);font-weight:700;font-size:22px;line-height:1.2}
+  .q .spec{margin-top:16px;display:block}
+  .proof .note{margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+  @media (max-width:900px){.proof .grid{grid-template-columns:1fr}}
 
-.btn-primary {
-  background: var(--accent);
-  color: var(--cream);
-  padding: 18px 32px;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: none;
-  cursor: pointer;
-}
+  /* HANDOFF — the absence check */
+  .risk{background:var(--steel-2);color:var(--paper);padding:84px 0;border-bottom:1px solid var(--line-dk)}
+  .risk .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+  .risk h2{margin-top:10px}
+  .risk .lede{color:#C9CDD1;font-size:17px;margin-top:18px;max-width:46ch}
+  .risk .kicker{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(18px,1.9vw,22px);line-height:1.16;margin-top:30px;max-width:30ch;border-left:4px solid var(--orange);padding-left:16px}
+  .risk .kicker span{color:var(--orange)}
+  .sheet{position:relative;background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--orange);font-family:var(--mono)}
+  .sheet .head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:2px solid var(--ink);background:var(--bone)}
+  .sheet .head .t{font-family:var(--stamp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .sheet .head .n{font-size:12px;color:var(--mute)}
+  .sheet .hint{padding:14px 18px 8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .chk{display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;padding:13px 18px;border-top:1px dashed var(--line);cursor:pointer;user-select:none;font-family:var(--sans);font-size:15px;color:#3A3F44}
+  .chk:hover{background:#F2EEE7}
+  .chk input{appearance:none;width:22px;height:22px;border:2px solid var(--ink);background:#fff;margin-top:1px;cursor:pointer;position:relative;flex:none}
+  .chk input:checked{background:var(--orange);border-color:var(--orange)}
+  .chk input:checked::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+  .sheet .res{border-top:2px solid var(--ink);padding:16px 18px;min-height:78px;display:flex;flex-direction:column;justify-content:center}
+  .sheet .res .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .sheet .res .val{font-family:var(--sans);font-size:15px;margin-top:6px;line-height:1.35}
+  .sheet .res .val b{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:17px;color:var(--orange-dk)}
+  @media (max-width:900px){.risk .grid{grid-template-columns:1fr;gap:38px}.risk{padding:64px 0}}
 
-.btn-primary:hover {
-  background: var(--accent-deep);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(233, 75, 53, 0.25);
-}
-
-.btn-primary .arrow {
-  transition: transform 0.25s ease;
-}
-
-.btn-primary:hover .arrow {
-  transform: translate(4px, -4px);
-}
-
-.btn-secondary {
-  color: var(--ink);
-  padding: 18px 24px;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: gap 0.25s ease;
-}
-
-.btn-secondary:hover {
-  gap: 14px;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  /* SYSTEM BAND — the flywheel lives here */
+  .system{background:var(--steel);color:var(--paper);padding:88px 0;border-top:1px solid var(--line-dk);border-bottom:1px solid var(--line-dk);overflow:hidden}
+  .system .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .system h2{margin-top:10px}
+  .system p{color:#C9CDD1;font-size:17px;max-width:48ch;margin-top:18px}
+  .system .claimline{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.2vw,26px);line-height:1.12;color:var(--paper);margin-top:26px;max-width:26ch}
+  .system .claimline span{color:var(--orange)}
+  @media (max-width:900px){.system .grid{grid-template-columns:1fr;gap:36px}.system{padding:64px 0}}
 
 /* RAMP VISUAL */
 .ramp-visual {
-  position: absolute;
-  right: -80px;
-  top: 100px;
-  width: 480px;
-  height: 480px;
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   pointer-events: none;
   opacity: 0;
-  animation: fadeIn 1.2s ease 0.5s forwards;
+  animation: fadeIn 1.2s ease 0.3s forwards;
 }
 
 @keyframes fadeIn {
@@ -359,6 +250,8 @@ nav {
 .ramp-visual svg {
   width: 100%;
   height: 100%;
+  display: block;
+  overflow: visible;
 }
 
 /* Ramp dot — feelers extend to satellites, then pull them back into the core */
@@ -473,8 +366,8 @@ nav {
 
 @keyframes calibrateFlash {
   0%   { fill: #e94b35; transform: scale(1.5); }
-  30%  { fill: #1a1a1a; transform: scale(1); }
-  100% { fill: #1a1a1a; transform: scale(1); }
+  30%  { fill: #F9F6F1; transform: scale(1); }
+  100% { fill: #F9F6F1; transform: scale(1); }
 }
 
 /* Ripple ring expands outward from Calibrate on each impact */
@@ -510,157 +403,6 @@ nav {
   75%   { transform: rotate(187deg); }
   87.5% { transform: rotate(264deg); }
   100%  { transform: rotate(0deg);   }
-}
-
-/* Approach section — logarithmic growth spiral. Signal dots emerge at center,
-   travel outward through 4.25 turns, then exit straight down into the sphere. */
-.growth-signal {
-  offset-path: path('M 195.0 120.0 L 195.0 121.4 L 194.5 122.8 L 193.7 124.1 L 192.5 125.1 L 191.1 125.8 L 189.4 126.1 L 187.7 125.9 L 186.0 125.2 L 184.5 124.0 L 183.4 122.5 L 182.8 120.6 L 182.6 118.5 L 183.1 116.4 L 184.1 114.5 L 185.7 112.9 L 187.8 111.7 L 190.1 111.1 L 192.7 111.2 L 195.2 112.0 L 197.4 113.5 L 199.2 115.6 L 200.4 118.3 L 200.8 121.2 L 200.4 124.3 L 199.1 127.3 L 197.0 129.8 L 194.2 131.8 L 190.8 132.9 L 187.2 133.1 L 183.5 132.2 L 180.0 130.3 L 177.2 127.4 L 175.1 123.7 L 174.2 119.5 L 174.4 115.0 L 175.9 110.6 L 178.6 106.6 L 182.5 103.5 L 187.2 101.4 L 192.5 100.7 L 198.0 101.6 L 203.2 103.9 L 207.7 107.8 L 211.1 112.8 L 213.0 118.9 L 213.2 125.4 L 211.5 132.0 L 208.0 138.0 L 202.8 143.1 L 196.2 146.6 L 188.6 148.2 L 180.6 147.7 L 172.8 144.8 L 165.8 139.8 L 160.3 132.9 L 156.8 124.4 L 155.8 114.9 L 157.4 105.2 L 161.8 96.0 L 168.7 88.1 L 177.9 82.3 L 188.7 79.0 L 200.3 78.9 L 211.9 82.0 L 222.6 88.4 L 231.4 97.9 L 237.5 109.7 L 240.2 123.3 L 239.0 137.5 L 233.7 151.3 L 224.6 163.6 L 212.0 173.2 L 196.8 179.2 L 180.0 180.8 L 162.7 177.6 L 146.5 169.6 L 132.7 157.0 L 122.5 140.5 L 117.0 121.2 L 117.0 100.5 L 123.0 79.8 L 134.7 61.0 L 151.8 45.6 L 173.1 35.2 L 197.3 30.8 L 222.6 33.3 L 247.1 43.1 L 268.6 59.7 L 285.3 82.3 L 295.5 109.6 L 297.9 139.6 L 291.8 170.2 L 277.0 198.9 L 254.1 223.2 L 224.5 240.8 L 190.0 250.0');
-  offset-distance: 0%;
-  offset-rotate: 0deg;
-  opacity: 0;
-  animation: spiralTravel 12s linear infinite;
-}
-
-.growth-signal-1 { animation-delay: 0s; }
-.growth-signal-2 { animation-delay: 4s; }
-.growth-signal-3 { animation-delay: 8s; }
-
-@keyframes spiralTravel {
-  0%   { offset-distance: 0%;   opacity: 0; }
-  3%   { opacity: 1; }
-  97%  { opacity: 1; }
-  100% { offset-distance: 100%; opacity: 0; }
-}
-
-/* Return signal — once per 12s spiral cycle, a single dot emerges from
-   the polyhedron, arcs wide to the right, and drops back into the spiral's
-   center: the consolidated learning that feeds the next cycle. */
-.return-signal {
-  offset-path: path('M 190 250 C 70 230 70 140 195 120');
-  offset-distance: 0%;
-  offset-rotate: 0deg;
-  opacity: 0;
-  animation: returnTravel 12s linear infinite;
-}
-
-@keyframes returnTravel {
-  0%   { offset-distance: 0%;   opacity: 0; }
-  3%   { offset-distance: 0%;   opacity: 1; }
-  38%  { opacity: 1; }
-  42%  { offset-distance: 100%; opacity: 0; }
-  100% { offset-distance: 100%; opacity: 0; }
-}
-
-/* 3D morphing polyhedron at spiral's end — cube ↔ rhombic dodecahedron via
-   chamfering. Six square faces translate outward while twelve rhombic faces
-   expand their clip-path, both driven by a single Houdini-registered --p.
-   Charcoal squares = raw input → orange rhombuses = branded structure. */
-@property --p {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: true;
-}
-
-.morph-poly {
-  position: absolute;
-  top: 69.4%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  transform: translate(-50%, -50%);
-  perspective: 25em;
-  pointer-events: none;
-  display: grid;
-  place-items: center;
-}
-
-.morph-poly .a3d,
-.morph-poly .s3d,
-.morph-poly .s2d {
-  display: grid;
-  grid-area: 1 / 1;
-  place-items: center;
-  transform-style: preserve-3d;
-}
-
-.morph-poly .a3d {
-  --p: 0;
-  --q: calc(1 - var(--p));
-  will-change: transform;
-  animation:
-    morphP 8s cubic-bezier(.65, 0, .35, 1) infinite alternate,
-    morphR 16s linear infinite;
-}
-
-@keyframes morphP { to { --p: 1; } }
-@keyframes morphR { to { transform: rotateY(1turn); } }
-
-.morph-poly .s4gon {
-  --sgn: 0;
-  --mid: calc(1 - var(--sgn) * var(--sgn));
-  --end: calc(1 - var(--mid));
-  --lum: calc(62% + var(--sgn) * 5%);
-  height: 80px;
-  opacity: 0.875;
-  animation: morphS 8s linear calc(var(--j) / 4 * -16s) infinite alternate;
-}
-
-@keyframes morphS { to { filter: brightness(0.2); } }
-
-/* End-cap faces (top/bottom of cube; outer rings of dodecahedron) */
-.morph-poly .s4gon--sq:nth-child(5),
-.morph-poly .s4gon--rh:nth-child(-n + 4) { --sgn: -1; }
-
-.morph-poly .s4gon--sq:last-child,
-.morph-poly .s4gon--rh:nth-last-child(-n + 4) { --sgn: 1; }
-
-/* Position index within each parent (4n + 1..4) */
-.morph-poly .s4gon:nth-child(4n + 1) { --j: calc(0 + 0.5 * var(--typ) * var(--mid)); }
-.morph-poly .s4gon:nth-child(4n + 2) { --j: calc(1 + 0.5 * var(--typ) * var(--mid)); }
-.morph-poly .s4gon:nth-child(4n + 3) { --j: calc(2 + 0.5 * var(--typ) * var(--mid)); }
-.morph-poly .s4gon:nth-child(4n + 4) { --j: calc(3 + 0.5 * var(--typ) * var(--mid)); }
-
-.morph-poly .s4gon--sq {
-  --typ: 0;
-  --ang: calc((var(--end) * var(--sgn) + var(--mid) * var(--j)) * 90deg);
-  width: 80px;
-  transform:
-    rotate3d(var(--end), var(--mid), 0, var(--ang))
-    translateZ(calc(40px * (1 + var(--p))))
-    scale(calc(0.975 * var(--q)));
-  background: radial-gradient(
-    hsl(28, calc(20% - var(--sgn) * 5%), calc(var(--lum) - 40%)),
-    hsl(25, calc(20% - var(--sgn) * 5%), calc(var(--lum) - 55%))
-  );
-}
-
-.morph-poly .s4gon--rh {
-  --typ: 1;
-  width: 113.14px;
-  transform:
-    rotateY(calc(var(--j) * 90deg))
-    rotateX(calc(var(--end) * var(--sgn, 1) * 45deg))
-    rotate(calc(var(--end) * 90deg))
-    translateZ(56.57px)
-    scale(0.975);
-  background: radial-gradient(
-    hsl(8, calc(78% - var(--sgn) * 9%), calc(var(--lum) - 6%)),
-    hsl(11, calc(78% - var(--sgn) * 9%), calc(var(--lum) - 20%))
-  );
-  clip-path: polygon(
-    50% 0,
-    calc(50% * (1 + var(--p))) calc(50% * (1 - var(--q))),
-    calc(50% * (1 + var(--p))) calc(50% * (1 + var(--q))),
-    50% 100%,
-    calc(50% * (1 - var(--p))) calc(50% * (1 + var(--q))),
-    calc(50% * (1 - var(--p))) calc(50% * (1 - var(--q)))
-  );
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .morph-poly .a3d,
-  .morph-poly .s4gon { animation: none; }
 }
 
 /* Jet ring rotates clockwise one full turn per slot-fill cycle (7.2s).
@@ -752,1228 +494,502 @@ nav {
   100%  { offset-distance: 100%; opacity: 0; }
 }
 
-@media (max-width: 1024px) {
-  .ramp-visual {
-    display: none;
-  }
-}
-
-/* MARQUEE / SOCIAL PROOF */
-.proof-band {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 28px 0;
-  background: var(--cream-deep);
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.proof-band-inner {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  white-space: nowrap;
-  animation: scroll 40s linear infinite;
-}
-
-.proof-band-inner span {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.proof-band-inner span::before {
-  content: '◆';
-  color: var(--accent);
-  font-size: 8px;
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* SECTIONS */
-section {
-  padding: 120px 0;
-  position: relative;
-}
-
-.section-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.section-eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-}
-
-.section-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5.5vw, 68px);
-  font-weight: 400;
-  line-height: 1.0;
-  letter-spacing: -0.03em;
-  margin-bottom: 32px;
-  max-width: 900px;
-}
-
-.section-title .italic {
-  color: var(--accent);
-}
-
-.section-intro {
-  font-size: 20px;
-  color: var(--ink-soft);
-  max-width: 640px;
-  line-height: 1.5;
-  margin-bottom: 80px;
-}
-
-/* PROBLEM SECTION */
-.problem {
-  background: var(--ink);
-  color: var(--cream);
-  margin: 0 -40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 0;
-}
-
-.problem .section-eyebrow {
-  color: var(--accent);
-}
-
-.problem .section-title { color: var(--cream); }
-.problem .section-intro { color: rgba(244, 239, 230, 0.9); }
-
-.source-citation {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: rgba(244, 239, 230, 0.7);
-  letter-spacing: 0.04em;
-  margin-top: 64px;
-  line-height: 1.6;
-}
-
-.problem .section-eyebrow::before {
-  background: var(--accent);
-}
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  max-width: 1200px;
-}
-
-.problem-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.stat {
-  border-top: 1px solid rgba(244, 239, 230, 0.15);
-  padding-top: 24px;
-}
-
-.stat-number {
-  font-family: 'Fraunces', serif;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 15px;
-  color: rgba(244, 239, 230, 0.7);
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .problem-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .stat-number {
-    font-size: 48px;
-  }
-}
-
-/* HOW IT WORKS - THE THREE TIERS */
-.tiers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 60px;
-}
-
-.tier-card {
-  background: var(--cream);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 40px 32px;
-  position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.tier-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.tier-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 24px 48px -12px rgba(26, 26, 26, 0.08);
-}
-
-.tier-card:hover::before {
-  transform: scaleX(1);
-}
-
-.tier-number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.tier-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--accent-soft);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  color: var(--accent);
-}
-
-.tier-icon svg {
-  width: 32px;
-  height: 32px;
-}
-
-.tier-name {
-  font-family: 'Fraunces', serif;
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.tier-tagline {
-  font-style: italic;
-  color: var(--accent);
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-.tier-desc {
-  color: var(--ink-soft);
-  margin-bottom: 24px;
-  font-size: 15.5px;
-  line-height: 1.55;
-}
-
-.tier-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.tier-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.4;
-}
-
-.tier-list li::before {
-  content: '→';
-  color: var(--accent);
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
 @media (max-width: 900px) {
-  .tiers-grid {
-    grid-template-columns: 1fr;
-  }
+  .ramp-visual { max-width: 340px; }
 }
 
-/* APPROACH / FLYWHEEL */
-.flywheel-section {
-  background: var(--cream-deep);
-  margin: 0 -40px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.flywheel-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: start;
-  margin-top: 40px;
-}
-
-.flywheel-points {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.flywheel-point {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.flywheel-point-num {
-  font-family: 'Fraunces', serif;
-  font-size: 56px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--accent);
-  line-height: 0.9;
-  flex-shrink: 0;
-  width: 80px;
-}
-
-.flywheel-point-content h4 {
-  font-family: 'Fraunces', serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-}
-
-.flywheel-point-content p {
-  color: var(--ink-soft);
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.flywheel-visual {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.flywheel-stage {
-  position: relative;
-  width: 100%;
-}
-
-.flywheel-caption {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.4;
-  color: var(--ink-soft);
-  text-align: center;
-  max-width: 360px;
-}
-
-.flywheel-caption-top    { margin-bottom: 12px; }
-.flywheel-caption-bottom { margin-top: 12px; }
-
-@media (max-width: 1024px) {
-  .flywheel-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .flywheel-visual {
-    order: -1;
-  }
-}
-
-/* PITCH BLOCK */
-.pitch-block {
-  text-align: center;
-  padding: 160px 0;
-  position: relative;
-}
-
-.pitch-quote {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.pitch-quote .accent {
-  color: var(--accent);
-  font-style: italic;
-}
-
-.pitch-mark {
-  font-family: 'Fraunces', serif;
-  font-size: 120px;
-  color: var(--accent);
-  line-height: 0.5;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 8px;
-  opacity: 0.4;
-}
-
-/* WEBSITES → WEBSURFACES */
-.surface-shift {
-  text-align: center;
-  padding: 140px 0;
-}
-
-.surface-shift-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 5.5vw, 68px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin: 0 auto 32px;
-  max-width: 900px;
-}
-
-.surface-shift-title .italic {
-  color: var(--accent);
-}
-
-.surface-shift-body {
-  font-size: 20px;
-  color: var(--ink-soft);
-  max-width: 680px;
-  line-height: 1.5;
-  margin: 0 auto;
-}
-
-/* CTA SECTION */
-.cta-section {
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: 32px;
-  margin: 80px 0 120px;
-  padding: 100px 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-.cta-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
-}
-
-.cta-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.cta-title .italic {
-  color: var(--accent);
-}
-
-.cta-form {
-  display: flex;
-  gap: 12px;
-  max-width: 480px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cta-input {
-  flex: 1;
-  min-width: 240px;
-  padding: 18px 24px;
-  border-radius: 100px;
-  border: 1px solid rgba(244, 239, 230, 0.2);
-  background: rgba(244, 239, 230, 0.05);
-  color: var(--cream);
-  font-family: inherit;
-  font-size: 15px;
-}
-
-.cta-input::placeholder {
-  color: rgba(244, 239, 230, 0.5);
-}
-
-.cta-input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(244, 239, 230, 0.08);
-}
-
-.cta-note {
-  font-size: 13px;
-  color: rgba(244, 239, 230, 0.6);
-  margin-top: 24px;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.02em;
-  position: relative;
-  z-index: 1;
-}
-
-/* FOOTER */
-footer {
-  border-top: 1px solid var(--line);
-  padding: 48px 0 40px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-text {
-  font-size: 14px;
-  color: var(--muted);
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  nav {
-    padding: 24px 0;
-  }
-  .nav-links {
-    gap: 20px;
-  }
-  .nav-links a:not(.nav-cta) {
-    display: none;
-  }
-  .hero {
-    padding: 60px 0 80px;
-  }
-  section {
-    padding: 80px 0;
-  }
-  .problem, .flywheel-section {
-    margin: 0 -24px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .cta-section {
-    padding: 60px 24px;
-    border-radius: 24px;
-  }
-  .flywheel-point-num {
-    font-size: 40px;
-    width: 60px;
-  }
-}
-
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-delay: 0ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+  /* Reduced motion: the blanket animation:none above would leave the flywheel
+     at opacity 0, so pin it to a readable static state instead. */
+  @media (prefers-reduced-motion:reduce){
+    .ramp-visual{opacity:1!important}
+    .feeler{stroke-dasharray:100 0!important}
+    .satellite{opacity:1!important;transform:none!important}
+    .calibrate-core{fill:#F9F6F1!important;transform:none!important}
+    .tune-needle{transform:none!important}
+    .jet-slot{opacity:1!important}
+    .jet-ring{transform:none!important}
+    .packet,.packet-acc,.packet-return,.calibrate-ripple{opacity:0!important}
   }
 
-  html {
-    scroll-behavior: auto !important;
-  }
+  /* BOOKING FORM */
+  .booking{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;max-width:560px}
+  .booking input[type=email]{flex:1 1 260px;font-family:var(--mono);font-size:15px;padding:15px 16px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+  .booking input[type=email]::placeholder{color:var(--mute)}
+  .booking .btn{border:2px solid var(--orange)}
+  .msg{font-family:var(--mono);font-size:14px;margin-top:16px}
+  .msg.ok{color:var(--orange-dk)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-  /* Make sure faded-in content is visible (animations are still set with `forwards`) */
-  .hero-eyebrow,
-  .hero h1,
-  .hero-sub,
-  .hero-cta-row,
-  .ramp-visual,
-  .rotator-word {
-    opacity: 1 !important;
-  }
-
-  /* Stop infinite/decorative motion entirely */
-  .hero-eyebrow .dot,
-  .proof-band-inner,
-  .rotator-word,
-  .rotator-word.exiting,
-  .feeler,
-  .satellite,
-  .ramp-core,
-  .packet,
-  .calibrate-core,
-  .calibrate-ripple,
-  .tune-needle,
-  .packet-acc,
-  .jet-slot,
-  .jet-ring,
-  .packet-return,
-  .growth-signal {
-    animation: none !important;
-  }
-
-  /* Keep feelers + satellites + jet slots visible statically; hide travelling/transient elements */
-  .feeler { stroke-dasharray: 100 0 !important; }
-  .satellite { opacity: 1 !important; transform: none !important; }
-  .packet { opacity: 0 !important; }
-  .calibrate-ripple { opacity: 0 !important; }
-  .calibrate-core { fill: #1a1a1a !important; transform: none !important; }
-  .tune-needle { transform: none !important; }
-  .growth-signal { opacity: 0 !important; }
-  .packet-acc { opacity: 0 !important; }
-  .jet-slot { opacity: 1 !important; }
-  .jet-ring { transform: none !important; }
-  .packet-return { opacity: 0 !important; }
-
-  /* Disable hover lift transforms */
-  .nav-cta:hover,
-  .btn-primary:hover,
-  .tier-card:hover {
-    transform: none !important;
-  }
-}
-
-/* Thank-you message after CTA submit */
-.thanks-message {
-  color: var(--accent);
-  margin-top: 24px;
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-style: italic;
-  position: relative;
-  z-index: 1;
-}
-
-/* Error message if Formspree submit fails */
-.form-error-message {
-  color: var(--cream);
-  margin-top: 24px;
-  font-size: 16px;
-  position: relative;
-  z-index: 1;
-  opacity: 0.85;
-}
-
-.form-error-message a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* Visually hidden but accessible to screen readers */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
+  /* FINAL */
+  .final{padding:96px 0}
+  .final .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:28px}
+  footer{background:var(--steel);color:var(--mute-lt);padding:28px 0;font-family:var(--mono);font-size:12px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot .brand{color:var(--paper);font-size:20px}
+  .foot a{color:var(--mute-lt)}
+  .foot nav a{margin-left:18px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
+  .foot nav a:hover{color:var(--paper)}
 </style>
 </head>
-<body>
+<body id="top">
 
-<div class="container">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Rampjet home">Ramp<b>/</b>Jet</a>
+    <ul>
+      <li><a href="#map">Where we work</a></li>
+      <li><a href="#rework">Rework</a></li>
+      <li><a href="#reach">Reach</a></li>
+      <li><a href="#run">Run</a></li>
+      <li><a href="#full">The Full Build</a></li>
+    </ul>
+    <a class="btn" href="#book">Book a call</a>
+  </div>
+</header>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Ramp<span class="slash">/</span>Jet</div>
-    <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact" class="nav-cta">Get a baseline</a>
-    </div>
-  </nav>
+<main>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="ramp-visual">
-      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- The loop: a single dotted circle that all three nodes sit on -->
-        <circle cx="260" cy="240" r="160" fill="none" stroke="#e94b35" stroke-width="2" stroke-dasharray="4 6" opacity="0.5"/>
+    <div class="wrap">
+      <div>
+        <div class="spec on">Rampjet · For owner-operated industrial companies</div>
+        <h1 style="margin-top:18px">Systems for the half <span>that runs on memory.</span></h1>
+        <p class="sub">We build the website, then the demand engine behind it, then the quoting, tracking, and follow-up your team still runs on spreadsheets. Everything from the first search to the ERP &mdash; and nothing past it. We connect what you already have.</p>
+        <div class="row">
+          <a class="btn" href="#book">Book a 45-minute call
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
+          </a>
+          <span class="spec">Buy one. Or all three.</span>
+        </div>
+      </div>
 
-        <!-- Ramp aura rings (9 o'clock on the loop) -->
-        <circle cx="100" cy="240" r="60" fill="#e94b35" opacity="0.08"/>
-        <circle cx="100" cy="240" r="40" fill="#e94b35" opacity="0.15"/>
+      <!-- ORDER FORM -->
+      <form class="order" id="order" onsubmit="return false" aria-label="Choose what you need">
+        <span class="stamp">Check what you need</span>
+        <div class="head"><span class="t">Order form</span><span class="n">RJ-2026-0001</span></div>
+        <div class="hint">Line items — check one or all three</div>
 
-        <!-- Feeler lines (extend toward satellites, then retract carrying them back) -->
-        <line class="feeler feeler-1" x1="100" y1="240" x2="62" y2="168" pathLength="100"/>
-        <line class="feeler feeler-2" x1="100" y1="240" x2="38" y2="200" pathLength="100"/>
-        <line class="feeler feeler-3" x1="100" y1="240" x2="22" y2="240" pathLength="100"/>
-        <line class="feeler feeler-4" x1="100" y1="240" x2="42" y2="285" pathLength="100"/>
+        <label class="line">
+          <input type="checkbox" name="rework" value="Rework">
+          <span><span class="nm">Rework</span><span class="ds">Your website, rebuilt in two days.</span></span>
+          <span class="pr">$2,000<small>one-time</small></span>
+        </label>
+        <label class="line">
+          <input type="checkbox" name="reach" value="Reach">
+          <span><span class="nm">Reach</span><span class="ds">Every inquiry captured, routed, and followed up.</span></span>
+          <span class="pr">$750<small>per month</small></span>
+        </label>
+        <label class="line">
+          <input type="checkbox" name="run" value="Run">
+          <span><span class="nm">Run</span><span class="ds">Quoting, tracking, and records out of one person's head.</span></span>
+          <span class="pr">from $3,500<small>per project</small></span>
+        </label>
 
-        <!-- Satellite data points (fade in, get pulled into Ramp core) -->
-        <circle class="satellite satellite-1" cx="62" cy="168" r="4" fill="#e94b35"/>
-        <circle class="satellite satellite-2" cx="38" cy="200" r="4" fill="#e94b35"/>
-        <circle class="satellite satellite-3" cx="22" cy="240" r="4" fill="#e94b35"/>
-        <circle class="satellite satellite-4" cx="42" cy="285" r="4" fill="#e94b35"/>
-
-        <!-- Ramp → Calibrate packets (CW short arc up the left side, drawn behind core so they emerge from inside) -->
-        <circle class="packet packet-1" r="3" fill="#e94b35"/>
-        <circle class="packet packet-2" r="3" fill="#e94b35"/>
-        <circle class="packet packet-3" r="3" fill="#e94b35"/>
-        <circle class="packet packet-4" r="3" fill="#e94b35"/>
-
-        <!-- Ramp core (at 9 o'clock) -->
-        <circle class="ramp-core" cx="100" cy="240" r="22" fill="#e94b35"/>
-
-        <!-- Calibrate ripple (12 o'clock on the loop) -->
-        <circle class="calibrate-ripple" cx="260" cy="80" r="14" fill="none" stroke="#e94b35" stroke-width="1.5"/>
-
-        <!-- Calibrate core -->
-        <circle class="calibrate-core" cx="260" cy="80" r="14" fill="#1a1a1a"/>
-
-        <!-- Tune core (static dark dot at 3 o'clock — the dial's body) -->
-        <circle cx="420" cy="240" r="14" fill="#1a1a1a"/>
-
-        <!-- Tune needle — small indicator inside Tune that rotates CW, advancing 45° per packet pass -->
-        <line class="tune-needle" x1="420" y1="240" x2="420" y2="230" stroke="#f4efe6" stroke-width="2" stroke-linecap="round"/>
-
-        <!-- Jet outer aura (6 o'clock on the loop) -->
-        <circle cx="260" cy="400" r="40" fill="#1a1a1a" opacity="0.08"/>
-
-        <!-- Jet middle ring -->
-        <circle cx="260" cy="400" r="28" fill="#1a1a1a"/>
-
-        <!-- Rotating accretion ring: slot 1 sits at P (directly left of Jet — where the CW
-             packet naturally arrives). Each successive slot rotates into P as packets land. -->
-        <g class="jet-ring">
-          <circle class="jet-slot jet-slot-1" cx="292.8" cy="396.6" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-2" cx="280.8" cy="374.4" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-3" cx="256.6" cy="367.2" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-4" cx="234.4" cy="379.2" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-5" cx="227.2" cy="403.4" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-6" cx="239.2" cy="425.6" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-7" cx="263.4" cy="432.8" r="4" fill="#e94b35"/>
-          <circle class="jet-slot jet-slot-8" cx="285.6" cy="420.8" r="4" fill="#e94b35"/>
-        </g>
-
-        <!-- Calibrate → Jet accretion packets (CW long arc through right and bottom of loop, then to slot) -->
-        <circle class="packet-acc packet-acc-1" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-2" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-3" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-4" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-5" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-6" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-7" r="5" fill="#e94b35"/>
-        <circle class="packet-acc packet-acc-8" r="5" fill="#e94b35"/>
-
-        <!-- Jet inner core (static orange) -->
-        <circle cx="260" cy="400" r="8" fill="#e94b35"/>
-
-        <!-- Return packet (CW short arc up the lower-left back to Ramp — closes the cycle) -->
-        <circle class="packet-return" r="6" fill="#e94b35"/>
-
-        <!-- Labels (radially outside the loop) -->
-        <text x="100" y="320" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">RAMP</text>
-        <text x="260" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">CALIBRATE</text>
-        <text x="455" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">TUNE</text>
-        <text x="260" y="460" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b655c" letter-spacing="2">JET</text>
-      </svg>
-    </div>
-    
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      <span>For mid-market B2B teams</span>
-    </div>
-    
-    <h1>
-      Be the answer<br>
-      when buyers<br>
-      ask <span class="rotator" id="rotator"><span class="rotator-sizer" aria-hidden="true">DuckDuckGo</span><span class="rotator-word">AI</span></span>
-    </h1>
-    
-    <p class="hero-sub">
-      We turn your website into a self-improving growth engine. Built for AI and Traditional search. Structured for conversion. Refined by real buyer behavior.
-    </p>
-    
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary">
-        Get your visibility baseline
-        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      <a href="#how" class="btn-secondary">
-        See how it works
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+        <div class="tot">
+          <div>
+            <div class="lbl">Your order</div>
+            <div class="val" id="tot">Nothing checked yet. Start with the one that hurts.</div>
+          </div>
+          <a class="btn" href="#book" id="totbtn">Book a call</a>
+        </div>
+      </form>
     </div>
   </section>
-</div>
 
-<!-- PROOF BAND -->
-<div class="proof-band">
-  <div class="proof-band-inner">
-    <span>96% of pages get zero Google traffic</span>
-    <span>AI search up 527% YoY</span>
-    <span>89% of B2B buyers use AI search</span>
-    <span>5x conversion vs. traditional organic</span>
-    <span>Only 11% of domains cited by both ChatGPT &amp; Perplexity</span>
-    <span>96% of pages get zero Google traffic</span>
-    <span>AI search up 527% YoY</span>
-    <span>89% of B2B buyers use AI search</span>
-    <span>5x conversion vs. traditional organic</span>
-    <span>Only 11% of domains cited by both ChatGPT &amp; Perplexity</span>
-  </div>
-</div>
 
-<div class="container">
+  <!-- HANDOFF / ABSENCE CHECK -->
+  <section class="risk" id="handoff">
+    <div class="wrap grid">
+      <div>
+        <div class="spec on">Worth asking</div>
+        <h2>One day, someone else runs this.</h2>
+        <p class="lede">Maybe you hand it to your daughter. Maybe you’re laid up for six weeks and it can’t wait. Maybe you just want two weeks off without your phone on the nightstand. Different futures, one requirement: whatever lives only in your head doesn’t go with it.</p>
+        <p class="kicker">Everything you know that isn’t written down is worth <span>exactly nothing</span> to whoever comes next.</p>
+      </div>
 
-  <!-- PROBLEM SECTION -->
-  <section class="problem">
-    <div class="container container--flush">
-      <div class="problem-grid">
+      <form class="sheet" id="absence" onsubmit="return false" aria-label="Three-week absence check">
+        <span class="stamp">Be honest</span>
+        <div class="head"><span class="t">Absence check</span><span class="n">RJ-2026-0002</span></div>
+        <div class="hint">You’re out three weeks &mdash; check the ones that still happen</div>
+        <label class="chk"><input type="checkbox"><span>A new inquiry gets answered the same day.</span></label>
+        <label class="chk"><input type="checkbox"><span>A quote goes out, at the right price.</span></label>
+        <label class="chk"><input type="checkbox"><span>A customer asks what they paid last time &mdash; someone can tell them.</span></label>
+        <label class="chk"><input type="checkbox"><span>The job that shipped Tuesday gets invoiced.</span></label>
+        <label class="chk"><input type="checkbox"><span>The guy who called twice gets called back.</span></label>
+        <div class="res">
+          <div class="lbl">Result</div>
+          <div class="val" id="absence-res">Nothing checked yet.</div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- TERRITORY MAP -->
+  <section class="map" id="map">
+    <div class="wrap">
+      <div class="intro">
         <div>
-          <div class="section-eyebrow">The shift</div>
-          <h2 class="section-title">
-            Search is mission critical.<br>
-            Now it's changing.<br>
-            <span class="italic">Most companies have no idea.</span>
-          </h2>
-          <p class="section-intro">
-            Most companies never won legacy search. 96% of pages get zero Google traffic. Now buyers ask ChatGPT and Perplexity first, expecting answers, not links. Two surfaces, same converging signals, both unsolved for most. You don't catch up by trying harder. You need a system. You need Ramp<span class="slash">/</span>Jet.
-          </p>
+          <div class="spec on">Where we work</div>
+          <h2 style="margin-top:10px">Everything up to the ERP.</h2>
         </div>
+        <p>The ERP (or QuickBooks, or the whiteboard) is where a job goes once it's won. Everything before that line runs on email, spreadsheets, and memory. That's our side. We never cross it.</p>
+      </div>
+      <div class="terr" aria-label="Map of what each Rampjet product covers, ending at the customer's ERP">
+        <div class="claim none">Not ours</div>
+        <div class="claim c1">Rework<small>The website</small></div>
+        <div class="claim c2">Reach<small>The demand engine</small></div>
+        <div class="claim c3">Run<small>Operations</small></div>
 
-        <div class="problem-stats">
-          <div class="stat">
-            <div class="stat-number">96%</div>
-            <div class="stat-label">Of web pages get zero traffic from Google — most companies haven't even won legacy search</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">527%</div>
-            <div class="stat-label">YoY growth in AI-referred web sessions</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">5×</div>
-            <div class="stat-label">Higher conversion rate from AI search vs. traditional organic</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">89%</div>
-            <div class="stat-label">Of B2B buyers now use AI search throughout the buying process</div>
-          </div>
+        <div class="st s1">Stage 1<b>A buyer searches</b></div>
+        <div class="st s2">Stage 2<b>They find your site</b></div>
+        <div class="st s3">Stage 3<b>An inquiry comes in</b></div>
+        <div class="st s4">Stage 4<b>Someone follows up</b></div>
+        <div class="st s5">Stage 5<b>A quote goes out</b></div>
+        <div class="st s6 last">Stage 6<b>The job is tracked and won</b></div>
+
+        <div class="erp">
+          <span class="k">The line</span>
+          <b>Your ERP</b>
+          <p>Or your accounting system, or whatever you run the shop on today. Yours. Untouched. We hand off clean and stop.</p>
         </div>
       </div>
-      <p class="source-citation">
-        Sources: Previsible (2025), Exposure Ninja (2026), Forrester Buyers' Journey Survey (2024), Ahrefs (2023).
-      </p>
+      <div class="legend">Orange bar = what Rampjet builds and maintains. Stage 1 is the buyer's; the last column is yours.</div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS / TIERS -->
-  <section id="how">
-    <div class="section-eyebrow">How it works</div>
-    <h2 class="section-title">
-      Three phases.<br>
-      <span class="italic">One continuous loop.</span>
-    </h2>
-    <p class="section-intro">
-      We don't run a 90-day project and disappear. Ramp, Calibrate<span class="slash">/</span>Tune, Jet — then we re-run the process with a higher performance baseline. Each cycle compounds on the last, and your growth keeps pace with the way buyers actually search.
-    </p>
-    
-    <div class="tiers-grid">
-      
-      <div class="tier-card">
-        <div class="tier-number">
-          <span>PHASE 01</span>
-          <span>Configure</span>
-        </div>
-        <div class="tier-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 20 L3 20 L21 4 Z"/>
-            <path d="M21 20 L15 20 L21 15 Z" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-        <h3 class="tier-name">Ramp</h3>
-        <div class="tier-tagline">Get the house in order.</div>
-        <p class="tier-desc">
-          We rebuild your website for discovery and conversion — optimizing structure, content, and AI <span class="slash">/</span> Traditional search visibility from the ground up. Every cycle starts here.
-        </p>
-        <ul class="tier-list">
-          <li>Site audit &amp; technical fixes</li>
-          <li>AI search baseline across ChatGPT, Perplexity, Gemini, Google</li>
-          <li>Conversion-focused page structure</li>
-          <li>Analytics &amp; attribution setup</li>
-        </ul>
+  <!-- WHO -->
+  <section class="who">
+    <div class="wrap grid">
+      <div>
+        <div class="spec on">Who this is for</div>
+        <h2>Where the owner is still the system.</h2>
       </div>
-      
-      <div class="tier-card">
-        <div class="tier-number">
-          <span>PHASE 02</span>
-          <span>Optimize</span>
-        </div>
-        <div class="tier-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 16 A 9 9 0 0 1 21 16"/>
-            <line x1="12" y1="16" x2="16.5" y2="9"/>
-            <circle cx="12" cy="16" r="1.5" fill="currentColor"/>
-            <line x1="5" y1="12" x2="6.5" y2="13"/>
-            <line x1="9" y1="9" x2="10" y2="10.5"/>
-            <line x1="15" y1="9" x2="14" y2="10.5"/>
-            <line x1="19" y1="12" x2="17.5" y2="13"/>
-          </svg>
-        </div>
-        <h3 class="tier-name">Calibrate<span class="slash">/</span>Tune</h3>
-        <div class="tier-tagline">Refine the system.</div>
-        <p class="tier-desc">
-          We create a flywheel between your site and your social channels — then refine everything based on real visitor behavior. This is where sustained growth compounds.
-        </p>
-        <ul class="tier-list">
-          <li>AI-cited content engineered for discovery</li>
-          <li>Web-to-social flywheel (LinkedIn &amp; beyond)</li>
-          <li>Continuous performance tuning</li>
-          <li>Conversion optimization from real data</li>
-        </ul>
-      </div>
-      
-      <div class="tier-card">
-        <div class="tier-number">
-          <span>PHASE 03</span>
-          <span>Accelerate</span>
-        </div>
-        <div class="tier-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2 C 9 5 8 9 8 12 V17 H16 V12 C 16 9 15 5 12 2 Z"/>
-            <circle cx="12" cy="10" r="1.5"/>
-            <path d="M8 13 L4 17 H8"/>
-            <path d="M16 13 L20 17 H16"/>
-            <line x1="10" y1="17" x2="10" y2="20"/>
-            <line x1="14" y1="17" x2="14" y2="20"/>
-            <line x1="12" y1="18" x2="12" y2="22"/>
-          </svg>
-        </div>
-        <h3 class="tier-name">Jet</h3>
-        <div class="tier-tagline">Turn traffic into pipeline.</div>
-        <p class="tier-desc">
-          As your visibility grows, we identify the companies already showing up — turning them into qualified prospects for your sales team, and signal that powers the next cycle.
-        </p>
-        <ul class="tier-list">
-          <li>Company-level visitor identification</li>
-          <li>ICP-fit prospect lists</li>
-          <li>Outbound-ready intelligence</li>
-          <li>Leads delivered, fully attributed</li>
-        </ul>
-      </div>
-      
+      <ul class="list">
+        <li><b>Industrial, owner-operated, roughly $5–50M.</b> Machine shops, fabricators, distributors, contract manufacturers, specialty suppliers.</li>
+        <li><b>Sales still route through one or two people.</b> The best customers are relationships, and the relationships live with the owner.</li>
+        <li><b>Quotes wait on whoever knows the job.</b> The pricing logic is in someone's head, and the spreadsheet is a memory aid, not a system.</li>
+        <li><b>The website was last touched when the last guy left.</b> It works, mostly. It doesn't look like the work.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- PITCH BLOCK -->
-  <section class="pitch-block">
-    <p class="pitch-quote">
-      <span class="pitch-mark">"</span>We don't optimize for rankings. We engineer a system that gets <span class="accent">continuously smarter</span> — every cycle, your business shows up sharper, in more places, in front of better buyers.
-    </p>
-  </section>
+  <!-- SYSTEM / FLYWHEEL -->
+  <section class="system" id="system">
+    <div class="wrap grid">
+      <div>
+        <div class="spec on">The system</div>
+        <h2>Built to keep running.</h2>
+        <p>Search, site, inquiry, follow-up, quote, job. Every one of those steps still runs on email, spreadsheets, and somebody remembering. We build them into something that keeps running, wire it to what you already have, and stop where your ERP starts.</p>
+        <p class="claimline">The systems the company runs on <span>when the owner isn’t in the room.</span></p>
+      </div>
+      <div class="ramp-visual">
+      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- The loop: a single dotted circle that all three nodes sit on -->
+      <circle cx="260" cy="240" r="160" fill="none" stroke="#e94b35" stroke-width="2" stroke-dasharray="4 6" opacity="0.65"/>
 
-  <!-- APPROACH / FLYWHEEL -->
-  <section id="approach" class="flywheel-section">
-    <div class="container container--flush">
-      <div class="section-eyebrow">The approach</div>
-      <h2 class="section-title">
-        Built for how<br>
-        <span class="italic">visibility actually works.</span>
-      </h2>
-      <p class="section-intro">
-        <strong>Our flywheel is the magic.</strong> Every cycle generates new signal — how buyers find you, what content earns citations, which companies are showing up — and sharpens the next cycle. Fixed fundamentals, live response — calibrated to a shifting search and discovery landscape. Most agencies sell you a project. We run a system.
-      </p>
+      <!-- Ramp aura rings (9 o'clock on the loop) -->
+      <circle cx="100" cy="240" r="60" fill="#e94b35" opacity="0.08"/>
+      <circle cx="100" cy="240" r="40" fill="#e94b35" opacity="0.15"/>
 
-      <div class="flywheel-grid">
-        <div class="flywheel-points">
+      <!-- Feeler lines (extend toward satellites, then retract carrying them back) -->
+      <line class="feeler feeler-1" x1="100" y1="240" x2="62" y2="168" pathLength="100"/>
+      <line class="feeler feeler-2" x1="100" y1="240" x2="38" y2="200" pathLength="100"/>
+      <line class="feeler feeler-3" x1="100" y1="240" x2="22" y2="240" pathLength="100"/>
+      <line class="feeler feeler-4" x1="100" y1="240" x2="42" y2="285" pathLength="100"/>
 
-          <div class="flywheel-point">
-            <div class="flywheel-point-num">01</div>
-            <div class="flywheel-point-content">
-              <h4>A flywheel, not a one-time project</h4>
-              <p>Could you use Ramp<span class="slash">/</span>Jet for one cycle and call it quits? Sure — and you'd achieve measurably better visibility. 90 days later you'll need a refresh. Each cycle compounds on the last, elevating your visibility and pipeline in the current context of search and discovery.</p>
-            </div>
-          </div>
+      <!-- Satellite data points (fade in, get pulled into Ramp core) -->
+      <circle class="satellite satellite-1" cx="62" cy="168" r="4" fill="#e94b35"/>
+      <circle class="satellite satellite-2" cx="38" cy="200" r="4" fill="#e94b35"/>
+      <circle class="satellite satellite-3" cx="22" cy="240" r="4" fill="#e94b35"/>
+      <circle class="satellite satellite-4" cx="42" cy="285" r="4" fill="#e94b35"/>
 
-          <div class="flywheel-point">
-            <div class="flywheel-point-num">02</div>
-            <div class="flywheel-point-content">
-              <h4>Engineered for citation, not keywords</h4>
-              <p>Modern AI engines reward structure and substance over keyword stuffing. Our content is built to be extracted, summarized, and cited — across ChatGPT, Perplexity, Gemini, Google AI Overviews, and traditional search alike.</p>
-            </div>
-          </div>
+      <!-- Ramp → Calibrate packets (CW short arc up the left side, drawn behind core so they emerge from inside) -->
+      <circle class="packet packet-1" r="3" fill="#e94b35"/>
+      <circle class="packet packet-2" r="3" fill="#e94b35"/>
+      <circle class="packet packet-3" r="3" fill="#e94b35"/>
+      <circle class="packet packet-4" r="3" fill="#e94b35"/>
 
-          <div class="flywheel-point">
-            <div class="flywheel-point-num">03</div>
-            <div class="flywheel-point-content">
-              <h4>Fresh signal feeds the next cycle</h4>
-              <p>The companies showing up on your site don't just become prospects — they tell us where to focus the next cycle. Real buyer behavior shapes the next round of content, the next round of site tweaks, the next conversion paths.</p>
-            </div>
-          </div>
+      <!-- Ramp core (at 9 o'clock) -->
+      <circle class="ramp-core" cx="100" cy="240" r="22" fill="#e94b35"/>
 
-          <div class="flywheel-point">
-            <div class="flywheel-point-num">04</div>
-            <div class="flywheel-point-content">
-              <h4>We built this for ourselves</h4>
-              <p>We operate small teams across a few verticals. This methodology has been battle-tested in our own environments. We needed to create a system for visibility that allowed us to compete with the largest companies. This is that system.</p>
-            </div>
-          </div>
+      <!-- Calibrate ripple (12 o'clock on the loop) -->
+      <circle class="calibrate-ripple" cx="260" cy="80" r="14" fill="none" stroke="#e94b35" stroke-width="1.5"/>
 
-        </div>
-        
-        <div class="flywheel-visual">
-          <p class="flywheel-caption flywheel-caption-top">Ramp<span class="slash">/</span>Jet continuous improvement ensures…</p>
-          <div class="flywheel-stage">
-          <svg viewBox="0 0 380 360" width="380" height="360" style="max-width: 100%; width: 100%; height: auto;" fill="none" aria-hidden="true">
-            <!-- Logarithmic spiral — starts tight at top, spirals outward over 4.25 turns,
-                 ends naturally at (190, 250) where the polyhedron sits. -->
-            <path d="M 195.0 120.0 L 195.0 121.4 L 194.5 122.8 L 193.7 124.1 L 192.5 125.1 L 191.1 125.8 L 189.4 126.1 L 187.7 125.9 L 186.0 125.2 L 184.5 124.0 L 183.4 122.5 L 182.8 120.6 L 182.6 118.5 L 183.1 116.4 L 184.1 114.5 L 185.7 112.9 L 187.8 111.7 L 190.1 111.1 L 192.7 111.2 L 195.2 112.0 L 197.4 113.5 L 199.2 115.6 L 200.4 118.3 L 200.8 121.2 L 200.4 124.3 L 199.1 127.3 L 197.0 129.8 L 194.2 131.8 L 190.8 132.9 L 187.2 133.1 L 183.5 132.2 L 180.0 130.3 L 177.2 127.4 L 175.1 123.7 L 174.2 119.5 L 174.4 115.0 L 175.9 110.6 L 178.6 106.6 L 182.5 103.5 L 187.2 101.4 L 192.5 100.7 L 198.0 101.6 L 203.2 103.9 L 207.7 107.8 L 211.1 112.8 L 213.0 118.9 L 213.2 125.4 L 211.5 132.0 L 208.0 138.0 L 202.8 143.1 L 196.2 146.6 L 188.6 148.2 L 180.6 147.7 L 172.8 144.8 L 165.8 139.8 L 160.3 132.9 L 156.8 124.4 L 155.8 114.9 L 157.4 105.2 L 161.8 96.0 L 168.7 88.1 L 177.9 82.3 L 188.7 79.0 L 200.3 78.9 L 211.9 82.0 L 222.6 88.4 L 231.4 97.9 L 237.5 109.7 L 240.2 123.3 L 239.0 137.5 L 233.7 151.3 L 224.6 163.6 L 212.0 173.2 L 196.8 179.2 L 180.0 180.8 L 162.7 177.6 L 146.5 169.6 L 132.7 157.0 L 122.5 140.5 L 117.0 121.2 L 117.0 100.5 L 123.0 79.8 L 134.7 61.0 L 151.8 45.6 L 173.1 35.2 L 197.3 30.8 L 222.6 33.3 L 247.1 43.1 L 268.6 59.7 L 285.3 82.3 L 295.5 109.6 L 297.9 139.6 L 291.8 170.2 L 277.0 198.9 L 254.1 223.2 L 224.5 240.8 L 190.0 250.0" stroke="#e94b35" stroke-width="2" stroke-dasharray="4 6" fill="none" opacity="0.5"/>
+      <!-- Calibrate core -->
+      <circle class="calibrate-core" cx="260" cy="80" r="14" fill="#F9F6F1"/>
 
-            <!-- Three signal dots travel the spiral, emerging at top center,
-                 spiraling outward, exiting straight down into the sphere. -->
-            <circle class="growth-signal growth-signal-1" r="3.5" fill="#e94b35"/>
-            <circle class="growth-signal growth-signal-2" r="3.5" fill="#e94b35"/>
-            <circle class="growth-signal growth-signal-3" r="3.5" fill="#e94b35"/>
+      <!-- Tune core (static dark dot at 3 o'clock — the dial's body) -->
+      <circle cx="420" cy="240" r="14" fill="#F9F6F1"/>
 
-            <!-- Return signal — closes the loop: polyhedron → spiral center. -->
-            <circle class="return-signal" r="3.5" fill="#1a1a1a"/>
+      <!-- Tune needle — small indicator inside Tune that rotates CW, advancing 45° per packet pass -->
+      <line class="tune-needle" x1="420" y1="240" x2="420" y2="230" stroke="#0E1013" stroke-width="2" stroke-linecap="round"/>
 
-          </svg>
+      <!-- Jet outer aura (6 o'clock on the loop) -->
+      <circle cx="260" cy="400" r="40" fill="#F9F6F1" opacity="0.08"/>
 
-          <!-- Cube ↔ rhombic dodecahedron morph at the spiral's endpoint.
-               6 squares + 12 rhombuses; geometry driven entirely by --p. -->
-          <div class="morph-poly" aria-hidden="true">
-            <div class="a3d">
-              <div class="s3d s6hedron">
-                <div class="s2d s4gon s4gon--sq"></div>
-                <div class="s2d s4gon s4gon--sq"></div>
-                <div class="s2d s4gon s4gon--sq"></div>
-                <div class="s2d s4gon s4gon--sq"></div>
-                <div class="s2d s4gon s4gon--sq"></div>
-                <div class="s2d s4gon s4gon--sq"></div>
-              </div>
-              <div class="s3d s12hedron">
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-                <div class="s2d s4gon s4gon--rh"></div>
-              </div>
-            </div>
-          </div>
-          </div><!-- /.flywheel-stage -->
-          <p class="flywheel-caption flywheel-caption-bottom">Your visibility surface is optimized.</p>
-        </div>
+      <!-- Jet middle ring -->
+      <circle cx="260" cy="400" r="28" fill="#F9F6F1"/>
+
+      <!-- Rotating accretion ring: slot 1 sits at P (directly left of Jet — where the CW
+      packet naturally arrives). Each successive slot rotates into P as packets land. -->
+      <g class="jet-ring">
+      <circle class="jet-slot jet-slot-1" cx="292.8" cy="396.6" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-2" cx="280.8" cy="374.4" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-3" cx="256.6" cy="367.2" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-4" cx="234.4" cy="379.2" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-5" cx="227.2" cy="403.4" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-6" cx="239.2" cy="425.6" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-7" cx="263.4" cy="432.8" r="4" fill="#e94b35"/>
+      <circle class="jet-slot jet-slot-8" cx="285.6" cy="420.8" r="4" fill="#e94b35"/>
+      </g>
+
+      <!-- Calibrate → Jet accretion packets (CW long arc through right and bottom of loop, then to slot) -->
+      <circle class="packet-acc packet-acc-1" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-2" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-3" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-4" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-5" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-6" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-7" r="5" fill="#e94b35"/>
+      <circle class="packet-acc packet-acc-8" r="5" fill="#e94b35"/>
+
+      <!-- Jet inner core (static orange) -->
+      <circle cx="260" cy="400" r="8" fill="#e94b35"/>
+
+      <!-- Return packet (CW short arc up the lower-left back to Ramp — closes the cycle) -->
+      <circle class="packet-return" r="6" fill="#e94b35"/>
+
+      </svg>
       </div>
     </div>
   </section>
 
-  <!-- WEBSITES → WEBSURFACES -->
-  <section class="surface-shift">
-    <div class="container">
-      <h2 class="surface-shift-title">
-        Websites to <span class="italic"><strong>Websurfaces</strong></span>
-      </h2>
-      <p class="surface-shift-body">
-        Websites are paper maps. <strong>Websurfaces</strong> are living maps.<br>
-        The territory keeps changing, your surface should too.<br><br>
-        Ramp<span class="slash">/</span>Jet takes your web presence from a static sign to a living signal.
-      </p>
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="wrap">
+      <div class="intro">
+        <div>
+          <div class="spec on">Three products</div>
+          <h2 style="margin-top:10px">Each one stands on its own.</h2>
+        </div>
+        <p class="sub" style="max-width:40ch;font-size:17px">You don't need the website to buy the follow-up system. You don't need either to fix quoting. Start where it hurts.</p>
+      </div>
+
+      <!-- REWORK -->
+      <article class="prod" id="rework">
+        <div class="tag"><span class="sw"></span>Rework<small>The website</small></div>
+        <div>
+          <div class="say">Our site doesn't look like the work we do.</div>
+          <p>A professional site, rebuilt in two days from the first call. Full brand system, hosting included, two revision rounds. We manage it so you don't have to, and inspect it every quarter at no charge.</p>
+          <p>Flat price. No scope creep. If Rework isn't the right fix, we'll tell you on the call.</p>
+        </div>
+        <div class="card">
+          <div class="r"><span>Spec sheet</span><span>Rework</span></div>
+          <div class="r"><span class="k">Price</span><span class="v"><b>$2,000</b> one-time</span></div>
+          <div class="r"><span class="k">Lead time</span><span class="v">2 days from first call</span></div>
+          <div class="r"><span class="k">Includes</span><span class="v">Brand system · hosting · quarterly inspection</span></div>
+          <div class="r"><span class="k">Option</span><span class="v">+ Maintain, $200/mo</span></div>
+          <div class="r no"><span class="k">Does not include</span><span class="v">Lead follow-up after the form</span></div>
+          <div class="cta"><a href="#book">Start with Rework →</a></div>
+        </div>
+      </article>
+
+      <!-- REACH -->
+      <article class="prod" id="reach">
+        <div class="tag"><span class="sw"></span>Reach<small>The demand engine</small></div>
+        <div>
+          <div class="say">We get leads and nobody follows up.</div>
+          <p>Every inquiry — web form, email, phone — gets captured, routed to the right person, and followed up on a schedule that doesn't depend on who's busy. You see what came in, who touched it, and what closed. The system watches what works and adjusts.</p>
+          <p>Sits on a Rework site or on the site you already have, if we can wire into it. Revenue stops depending on who the owner knows.</p>
+        </div>
+        <div class="card">
+          <div class="r"><span>Spec sheet</span><span>Reach</span></div>
+          <div class="r"><span class="k">Price</span><span class="v"><b>$750</b> per month</span></div>
+          <div class="r"><span class="k">Live in</span><span class="v">2 weeks</span></div>
+          <div class="r"><span class="k">Includes</span><span class="v">Capture · routing · follow-up · weekly report</span></div>
+          <div class="r"><span class="k">Requires</span><span class="v">A site we can instrument</span></div>
+          <div class="r no"><span class="k">Does not include</span><span class="v">Quoting or internal ops</span></div>
+          <div class="cta"><a href="#book">Start with Reach →</a></div>
+        </div>
+      </article>
+
+      <!-- RUN -->
+      <article class="prod" id="run">
+        <div class="tag"><span class="sw"></span>Run<small>Operations</small></div>
+        <div>
+          <div class="say">Quotes wait on me.</div>
+          <p>One process at a time — quoting, job tracking, customer records, scheduling — pulled out of one person's head and into a system anyone on your team can run. We start with the thing that's costing you the most and scope it before we touch anything.</p>
+          <p>We connect to what's already there: QuickBooks, the spreadsheet, the shared drive, the phone. Nothing your people have to relearn their job to use.</p>
+        </div>
+        <div class="card">
+          <div class="r"><span>Spec sheet</span><span>Run</span></div>
+          <div class="r"><span class="k">Price</span><span class="v"><b>from $3,500</b> per project</span></div>
+          <div class="r"><span class="k">Scoped</span><span class="v">Fixed price before we start</span></div>
+          <div class="r"><span class="k">First projects</span><span class="v">Quoting · job tracking · customer records</span></div>
+          <div class="r"><span class="k">Works with</span><span class="v">What you already use</span></div>
+          <div class="r no"><span class="k">Does not include</span><span class="v">Marketing or the website</span></div>
+          <div class="cta"><a href="#book">Start with Run →</a></div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="contact">
-    <div class="cta-section">
-      <div class="cta-eyebrow">Start with a baseline</div>
-      <h2 class="cta-title">
-        See how visible<br>
-        you are <span class="italic">today.</span>
-      </h2>
-      <form class="cta-form" id="cta-form" action="https://formspree.io/f/xojryrdy" method="POST">
-        <label for="cta-email" class="sr-only">Email address</label>
-        <input type="email" id="cta-email" name="email" class="cta-input" placeholder="you@company.com" required />
-        <!-- Honeypot field to deter spam bots; real users won't fill this -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
-        <button type="submit" class="btn-primary">
-          Get my baseline
-          <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+  <!-- DON'T -->
+  <section class="dont">
+    <div class="wrap grid">
+      <div>
+        <div class="spec on">Worth saying out loud</div>
+        <h2 style="margin-top:10px">What we don't do.</h2>
+        <p>Most of what you've been pitched before is on this list. We work up to the ERP, not on it. The absence of the rest is the point.</p>
+      </div>
+      <ul>
+        <li>No ERP replacement</li>
+        <li>No six-month rollouts</li>
+        <li>No rip-and-replace</li>
+        <li>No "digital transformation"</li>
+        <li>No AI as a headline</li>
+        <li>Nothing your team has to relearn</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FULL BUILD -->
+  <section class="full" id="full">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <div class="spec on">All three, one plan</div>
+          <h2 style="margin-top:10px">The Full Build.</h2>
+        </div>
+        <p class="sub">For the owner who's already tired and wants one team to own the whole thing. Built in order, on one work order, for less than three separate engagements.</p>
+      </div>
+      <div class="route" role="list">
+        <div class="op" role="listitem">
+          <div class="n">Op 10</div>
+          <h3>Rework</h3>
+          <div class="w">Weeks 1–2</div>
+          <p>The site goes up first. It's the front door everything else attaches to, and it's the fastest visible win.</p>
+        </div>
+        <div class="op" role="listitem">
+          <div class="n">Op 20</div>
+          <h3>Reach</h3>
+          <div class="w">Weeks 2–4</div>
+          <p>Capture and follow-up go live on the new site. From here, no inquiry waits on the owner.</p>
+        </div>
+        <div class="op" role="listitem">
+          <div class="n">Op 30</div>
+          <h3>Run</h3>
+          <div class="w">Month 2 onward</div>
+          <p>First internal process scoped and built — usually quoting. Then the next one. Each priced before it starts.</p>
+        </div>
+      </div>
+      <div class="foot">
+        <div><b>One build price</b> for Rework + the first Run project, plus the Reach monthly. Bundled price on the call.</div>
+        <a class="btn" href="#book">Talk about the Full Build</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof">
+    <div class="wrap">
+      <div class="spec on">What it looks like when it works</div>
+      <h2 style="margin-top:10px">Before and after, in the owner's words.</h2>
+      <div class="grid">
+        <div class="q"><p>Quotes used to wait on one person. Now they go out the same day.</p><span class="spec">Run · Contract machining</span></div>
+        <div class="q"><p>Every web inquiry gets a call back within the hour, even when I'm on a plane.</p><span class="spec">Reach · Fabrication</span></div>
+        <div class="q"><p>Two weeks off for the first time in nine years. Nothing broke.</p><span class="spec">The Full Build · Distribution</span></div>
+      </div>
+      <div class="note">[ Placeholder statements. Replace with real ones before this goes anywhere public. ]</div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="book">
+    <div class="wrap">
+      <div class="spec on">Book the call</div>
+      <h2 style="margin-top:10px">Forty-five minutes. Then it's off your desk.</h2>
+      <p class="sub" style="margin-top:16px">Tell us which of the three hurts most. If none of them is the right fix, we'll say so on the call and you've lost nothing but the coffee.</p>
+      <form class="booking" id="cta-form" action="https://formspree.io/f/xojryrdy" method="POST">
+        <label class="sr-only" for="cta-email">Email address</label>
+        <input type="email" id="cta-email" name="email" placeholder="you@company.com" required>
+        <input type="hidden" name="items" id="cta-items" value="">
+        <!-- Honeypot: real people leave this empty -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+        <button class="btn" type="submit">Book a call
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
         </button>
       </form>
-      <p id="thanks" class="thanks-message" hidden>Thanks — your first cycle starts here. We'll be in touch within one business day.</p>
-      <p id="form-error" class="form-error-message" hidden>Hmm, something went wrong sending that. Please email us at <a href="mailto:joseph@rampjet.ai">joseph@rampjet.ai</a>.</p>
-      <div class="cta-note">No commitment. Your AI search baseline delivered within 5 business days — the first step in your first cycle.</div>
+      <p class="msg ok" id="thanks" hidden>Thanks — we’ll be in touch within one business day to find a time.</p>
+      <p class="msg" id="form-error" hidden>Hmm, that didn’t send. Email us at <a href="mailto:joseph@rampjet.ai">joseph@rampjet.ai</a>.</p>
+      <div class="spec" style="margin-top:18px">No commitment. Buy one. Or all three. Scoped and priced on the call.</div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-text">© 2026 Ramp<span class="slash">/</span>Jet. A self-improving growth engine for B2B.</div>
-    </div>
-  </footer>
+</main>
 
-</div>
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">Ramp<b>/</b>Jet</a>
+    <nav>
+      <a href="#rework">Rework</a><a href="#reach">Reach</a><a href="#run">Run</a><a href="#full">Full Build</a><a href="#">For advisors</a>
+    </nav>
+    <div>© 2026 Rampjet · Systems for industrial companies</div>
+  </div>
+</footer>
 
 <script>
-  // Rotating headline — search engines & AI services people actually use
-  // Alternates AI-native and traditional to reinforce "everywhere your buyers search"
-  const words = [
-    'ChatGPT',
-    'Google',
-    'Perplexity',
-    'Bing',
-    'Gemini',
-    'Claude',
-    'Copilot',
-    'DuckDuckGo'
-  ];
-  
-  let currentIndex = 0;
-  const rotatorEl = document.getElementById('rotator');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function rotateWord() {
-    // Defensive: if browser tab throttling left orphan words stacked up,
-    // keep only the first as the "current" word and remove the rest.
-    const allWords = rotatorEl.querySelectorAll('.rotator-word');
-    for (let i = 1; i < allWords.length; i++) {
-      allWords[i].remove();
+  (function(){
+    var form=document.getElementById('order'), tot=document.getElementById('tot'), btn=document.getElementById('totbtn');
+    var shape={rework:'Rework, one-time',reach:'Reach, monthly',run:'Run, per project'};
+    function update(){
+      var picked=[].slice.call(form.querySelectorAll('input:checked')).map(function(i){return i.name});
+      if(!picked.length){tot.innerHTML='Nothing checked yet. Start with the one that hurts.';btn.textContent='Book a call';return;}
+      if(picked.length===3){tot.innerHTML='<b>That\u2019s The Full Build.</b><br>One build price, one plan, bundled on the call.';btn.textContent='Talk Full Build';return;}
+      tot.innerHTML=picked.map(function(p){return shape[p]}).join(' + ')+'.<br>Scoped and priced on the call.';
+      btn.textContent=picked.length===1?'Start with '+picked[0].charAt(0).toUpperCase()+picked[0].slice(1):'Book a call';
     }
-    const currentWord = allWords[0];
-    if (!currentWord) return;
+    form.addEventListener('change',update);
 
-    currentWord.classList.add('exiting');
-
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % words.length;
-      const newWord = document.createElement('span');
-      newWord.className = 'rotator-word';
-      newWord.textContent = words[currentIndex];
-      // Final cleanup: nuke any remaining rotator-word elements (including
-      // currentWord) before appending the next, so only one ever lives.
-      rotatorEl.querySelectorAll('.rotator-word').forEach((el) => el.remove());
-      rotatorEl.appendChild(newWord);
-    }, 400);
-  }
-
-  // Chained setTimeout (not setInterval) so cycles can never queue up
-  // during tab throttling or main-thread pressure.
-  function scheduleNextRotation() {
-    setTimeout(() => {
-      rotateWord();
-      scheduleNextRotation();
-    }, 2200);
-  }
-
-  if (!prefersReducedMotion) {
-    setTimeout(scheduleNextRotation, 1800);
-  }
-
-  // CTA form — submit to Formspree via fetch, show inline thanks (or error)
-  const ctaForm = document.getElementById('cta-form');
-  const thanksMsg = document.getElementById('thanks');
-  const errorMsg = document.getElementById('form-error');
-  if (ctaForm && thanksMsg && errorMsg) {
-    ctaForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = ctaForm.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      errorMsg.hidden = true;
-      try {
-        const res = await fetch(ctaForm.action, {
-          method: 'POST',
-          body: new FormData(ctaForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          ctaForm.hidden = true;
-          thanksMsg.hidden = false;
-        } else {
-          errorMsg.hidden = false;
-          submitBtn.disabled = false;
-        }
-      } catch (err) {
-        errorMsg.hidden = false;
-        submitBtn.disabled = false;
-      }
+    // Carry the order-form selection into the booking form (doc 4.6)
+    var items=document.getElementById('cta-items');
+    form.addEventListener('change',function(){
+      if(!items) return;
+      items.value=[].slice.call(form.querySelectorAll('input:checked')).map(function(i){return i.value}).join(', ');
     });
-  }
-</script>
+  })();
 
+  // Absence check — count what still happens without the owner
+  (function(){
+    var f=document.getElementById('absence'); if(!f) return;
+    var out=document.getElementById('absence-res');
+    var boxes=[].slice.call(f.querySelectorAll('input[type=checkbox]'));
+    f.addEventListener('change',function(){
+      var kept=boxes.filter(function(b){return b.checked}).length;
+      var gap=boxes.length-kept;
+      if(kept===0){ out.innerHTML='Nothing checked yet.'; return; }
+      if(gap===0){ out.innerHTML='<b>All five.</b> Rare \u2014 and worth protecting.'; return; }
+      out.innerHTML='<b>'+gap+' of '+boxes.length+'</b> still wait on one person.<br>Those are the ones we build.';
+    });
+  })();
+
+  // Booking form — post to Formspree, show an inline result
+  (function(){
+    var f=document.getElementById('cta-form'), ok=document.getElementById('thanks'), bad=document.getElementById('form-error');
+    if(!f||!ok||!bad) return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button[type=submit]');
+      btn.disabled=true; bad.hidden=true;
+      fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+        .then(function(res){
+          if(res.ok){ f.hidden=true; ok.hidden=false; }
+          else { bad.hidden=false; btn.disabled=false; }
+        })
+        .catch(function(){ bad.hidden=false; btn.disabled=false; });
+    });
+  })();
+</script>
 </body>
 </html>
