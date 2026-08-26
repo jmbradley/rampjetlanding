@@ -62,16 +62,16 @@ Known-unfinished work, most consequential first. Details are in the sections bel
 
 | # | Item | Notes |
 |---|---|---|
-| 1 | **`/advisors` doesn't exist; the footer link points at `#`** | It's the *only* public doorway to advisor content, and it goes nowhere. DESIGN.md §6 has the full spec: move the Rework page's advisor section, Transfer Packet, confidentiality/fee notes and the two advisor FAQ items there, largely as written. This is the one page where exit and sale language is allowed — see §6 before writing any of it. Keep it out of the header nav; footer link only. |
-| 2 | **Reach `$750/mo` and Run `from $3,500` are placeholders** | Marked `[PLACEHOLDER]` in DESIGN.md §7, currently rendering as firm prices on a public page. Rework's $2,000 is real. When the numbers firm up, also add `priceSpecification` blocks to those two offers in the JSON-LD — they were deliberately left out so AI search wouldn't quote provisional prices as fact. |
-| 3 | **No proof/testimonial section** | Removed rather than ship the doc's illustrative quotes as real. DESIGN.md §4.8 specifies one; add it back when there are genuine statements or screenshots. |
-| 4 | **Product pages don't exist** | Nav and footer point at on-page anchors (`#rework`, `#reach`, `#run`). When `/rework` etc. ship, the anchors move with them. Template is DESIGN.md §5. |
+| 1 | **`/advisors` doesn't exist; the footer link points at `#`** | It's the *only* public doorway to advisor content, and it goes nowhere. the design doc §6 has the full spec: move the Rework page's advisor section, Transfer Packet, confidentiality/fee notes and the two advisor FAQ items there, largely as written. This is the one page where exit and sale language is allowed — see §6 before writing any of it. Keep it out of the header nav; footer link only. |
+| 2 | **Reach `$750/mo` and Run `from $3,500` are placeholders** | Marked `[PLACEHOLDER]` in the design doc §7, currently rendering as firm prices on a public page. Rework's $2,000 is real. When the numbers firm up, also add `priceSpecification` blocks to those two offers in the JSON-LD — they were deliberately left out so AI search wouldn't quote provisional prices as fact. |
+| 3 | **No proof/testimonial section** | Removed rather than ship the doc's illustrative quotes as real. the design doc §4.8 specifies one; add it back when there are genuine statements or screenshots. |
+| 4 | **Product pages don't exist** | Nav and footer point at on-page anchors (`#rework`, `#reach`, `#run`). When `/rework` etc. ship, the anchors move with them. Template is the design doc §5. |
 
 ### Before you push
 
 `main` is the GitHub Pages source — **a push to `main` deploys to rampjet.ai**. Branch for anything unfinished.
 
-⚠️ **The GitHub repo is public.** `_config.yml` keeps `BUILD.md` and `DESIGN.md` off the *published site* (rampjet.ai/DESIGN.md is 404), but that is not the same as private: both files are readable by anyone at `raw.githubusercontent.com/jmbradley/rampjetlanding/main/DESIGN.md`. DESIGN.md contains exit/sale-prep positioning and unpublished prices. Treat anything committed here as public.
+⚠️ **The GitHub repo is public.** `_config.yml` keeps `BUILD.md` off the published site, but that is not the same as private — anything committed here is readable by anyone at `raw.githubusercontent.com`. **The design document is deliberately not in this repo** for that reason: it carries exit/sale-prep positioning and unpublished prices. It lives at `~/Desktop/rampjet-design-doc.md`; ask Joseph for a copy. Don't commit it back in.
 
 ---
 
@@ -260,14 +260,14 @@ PNG fallbacks exist because **Safari doesn't support SVG favicons**. They can't 
 
 The territory map collapses at ≤980px to a linear list via CSS `order`, with each claim ahead of the stages it covers: Rework, stage 1, stage 2, Reach, stage 3, stage 4, Run, stage 5, stage 6, ERP.
 
-**Rework spans stages 1–2, not just stage 2.** DESIGN.md §4.2 leaves stage 1 ("a buyer searches") unclaimed with a "Not ours" cell; that cell is gone, because Rework also covers content and social work that acts before anyone reaches the site. The page doesn't name those modules — the claim bar is the only place it shows.
+**Rework spans stages 1–2, not just stage 2.** the design doc §4.2 leaves stage 1 ("a buyer searches") unclaimed with a "Not ours" cell; that cell is gone, because Rework also covers content and social work that acts before anyone reaches the site. The page doesn't name those modules — the claim bar is the only place it shows.
 
 ---
 
 ## Not real yet
 
 - **Reach `$750/mo` and Run `from $3,500`** are the design doc's `[PLACEHOLDER]` values, rendering as live prices. Rework's $2,000 is real.
-- **There is no proof/testimonial section.** It was removed rather than ship the design doc's illustrative quotes as if they were real. DESIGN.md §4.8 still specifies one; add it back when there are genuine customer statements or screenshots (a follow-up log, a quote that used to take a day).
+- **There is no proof/testimonial section.** It was removed rather than ship the design doc's illustrative quotes as if they were real. the design doc §4.8 still specifies one; add it back when there are genuine customer statements or screenshots (a follow-up log, a quote that used to take a day).
 - **No mobile nav menu.** `.nav ul` is `display:none` under 820px with no hamburger; only the wordmark and Book-a-call button show.
 - **Product pages, `/advisors`, and the "Also from Rampjet" strip** don't exist yet.
 - Footer's "For advisors" link points at `#`.
@@ -276,14 +276,14 @@ The territory map collapses at ≤980px to a linear list via CSS `order`, with e
 
 ## Where the spec lives
 
-**[DESIGN.md](DESIGN.md)** — the full design document: information architecture, product page templates for Reach and Run, the advisor page, design tokens, and the open decisions list. It is the source of truth for anything this file doesn't cover. Where the two disagree about *this page*, BUILD.md describes what actually shipped; DESIGN.md describes what was specified.
+**The design document** (`~/Desktop/rampjet-design-doc.md`, kept outside the repo) — the full spec: information architecture, product page templates for Reach and Run, the advisor page, design tokens, and the open decisions list. It is the source of truth for anything this file doesn't cover. Where the two disagree about *this page*, BUILD.md describes what actually shipped; the design doc describes what was specified.
 
 Three places this build knowingly departs from it:
 
-1. **The orange.** DESIGN.md §3.1 specifies `#C2603F`; we kept the brighter `#e94b35` from the previous site.
+1. **The orange.** the design doc §3.1 specifies `#C2603F`; we kept the brighter `#e94b35` from the previous site.
 2. **The flywheel section.** Not in the spec at all — added to give the animation a home.
 3. **The absence check.** Not in the spec. It implements the succession through-line, staying inside the §1 rule that keeps sale language off the house page.
-4. **Four copy edits** made after a coherence read, so DESIGN.md's verbatim copy no longer matches the page:
+4. **Four copy edits** made after a coherence read, so the design doc's verbatim copy no longer matches the page:
    - §4.5's `No AI as a headline` → **`No AI for its own sake`**. The original is a copywriting rule from §1 published as a customer promise; an owner reading it asks "headline of *what*?"
    - Reach's §4.4 P1 lost its closing sentence, *"The system watches what works and adjusts."* It was the only unfalsifiable claim on a page that otherwise commits to checkable numbers — and it sat one section above a list that swears off exactly that. Not replaced: the preceding sentence already opens "You see…", so a concrete substitute collided.
    - The absence check's fourth item was *"The job that shipped Tuesday gets invoiced."* Invoicing is past the ERP line, so the section was promising work the territory map says we never do.

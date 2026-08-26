@@ -5,6 +5,5 @@
 # existed. Internal docs stay in the repo but out of the published site.
 exclude:
   - BUILD.md
-  - DESIGN.md
   - "files (9).zip"
   - README.md
