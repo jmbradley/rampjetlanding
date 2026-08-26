@@ -125,7 +125,7 @@
   h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;text-transform:uppercase}
   h3{font-size:clamp(24px,2.8vw,36px);font-weight:800}
   p.sub{font-size:19px;color:#3A3F44;max-width:58ch}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:16px 22px;text-decoration:none;border:0;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;font-family:var(--mono);font-weight:700;font-size:19px;letter-spacing:.02em;text-transform:uppercase;padding:14px 20px;text-decoration:none;border:0;cursor:pointer}
   .btn:hover{background:var(--orange-lt)}
   .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
   .btn.ghost:hover{background:var(--ink);color:var(--paper)}
@@ -140,7 +140,7 @@
   .nav ul{display:flex;gap:28px;list-style:none;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
   .nav ul a{text-decoration:none;color:var(--mute-lt)}
   .nav ul a:hover{color:var(--paper)}
-  .nav .btn{padding:12px 18px}
+  .nav .btn{padding:10px 15px}
   @media (max-width:820px){.nav ul{display:none}}
 
   .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--orange);color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;text-decoration:none}
@@ -152,10 +152,12 @@
   .menu-btn:hover{background:var(--paper);color:var(--steel)}
   @media (max-width:820px){
     /* brand + Menu + CTA must share 375px without the CTA wrapping */
-    .nav{gap:10px}
-    .brand{font-size:20px}
-    .nav .btn{padding:10px 12px;font-size:11px;letter-spacing:.04em;white-space:nowrap}
-    .menu-btn{display:inline-flex;order:2;padding:9px 11px;font-size:11px;white-space:nowrap}
+    .nav{gap:6px}
+    .brand{font-size:17px}
+    /* the CTA keeps 19px so it stays above the WCAG large-text floor;
+       the brand and Menu give up the width to make room for it */
+    .nav .btn{padding:10px 9px;letter-spacing:0;white-space:nowrap}
+    .menu-btn{display:inline-flex;order:2;padding:9px 8px;font-size:13px;white-space:nowrap}
     .nav .btn{order:3}
     .nav ul{display:none}
     .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:74px;left:0;right:0;background:var(--steel);border-top:1px solid var(--line-dk);border-bottom:2px solid var(--orange);padding:0;z-index:60}
@@ -193,7 +195,7 @@
   .order .tot .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
   .order .tot .val{font-family:var(--sans);font-size:15px;margin-top:4px;line-height:1.35}
   .order .tot .val b{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:17px;color:var(--orange-dk)}
-  .order .tot .btn{padding:12px 16px;font-size:12px}
+  .order .tot .btn{padding:10px 13px}
   .stamp{position:absolute;right:14px;top:-14px;font-family:var(--stamp);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);background:var(--paper);padding:2px 8px;border:1px solid var(--orange);transform:rotate(2deg)}
   .order{position:relative}
 
@@ -705,8 +707,8 @@
         <p class="kicker">Everything you know that isn’t written down is worth <span>exactly nothing</span> to whoever comes next.</p>
       </div>
 
-      <form class="sheet" id="absence" onsubmit="return false" aria-label="Three-week absence check">
-        <div class="head"><span class="t">Absence check</span><span class="n honest">Be honest</span></div>
+      <form class="sheet" id="absence" onsubmit="return false" aria-label="Founder absence checklist">
+        <div class="head"><span class="t">Founder Absence Checklist</span><span class="n honest">Be honest</span></div>
         <div class="hint">You’re out for three weeks &mdash; check the ones that still happen</div>
         <label class="chk"><input type="checkbox"><span>A new inquiry gets answered the same day.</span></label>
         <label class="chk"><input type="checkbox"><span>A quote goes out, at the right price.</span></label>
