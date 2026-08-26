@@ -1,0 +1,10 @@
+# GitHub Pages build config.
+#
+# Everything in this repo is served publicly at rampjet.ai unless excluded
+# here — BUILD.md was reachable at rampjet.ai/BUILD.md before this file
+# existed. Internal docs stay in the repo but out of the published site.
+exclude:
+  - BUILD.md
+  - DESIGN.md
+  - "files (9).zip"
+  - README.md

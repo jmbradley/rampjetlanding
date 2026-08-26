@@ -256,4 +256,16 @@ The territory map collapses at ≤980px to a linear list in this order: stage 1,
 
 ## Where the spec lives
 
-The full design document — information architecture, product page templates, the advisor page, open decisions — is `rampjet-site-design-doc.md`, delivered alongside a mock (`rampjet-homepage.html`) that this build is derived from. **Neither is in the repo.** If you have the zip, that doc is the source of truth for anything this file doesn't cover; where the two disagree about *this page*, this file describes what actually shipped.
+**[DESIGN.md](DESIGN.md)** — the full design document: information architecture, product page templates for Reach and Run, the advisor page, design tokens, and the open decisions list. It is the source of truth for anything this file doesn't cover. Where the two disagree about *this page*, BUILD.md describes what actually shipped; DESIGN.md describes what was specified.
+
+Three places this build knowingly departs from it:
+
+1. **The orange.** DESIGN.md §3.1 specifies `#C2603F`; we kept the brighter `#e94b35` from the previous site.
+2. **The flywheel section.** Not in the spec at all — added to give the animation a home.
+3. **The absence check.** Not in the spec. It implements the succession through-line, staying inside the §1 rule that keeps sale language off the house page.
+
+The HTML mock the build derives from (`rampjet-homepage.html`) is **not** in the repo, deliberately: GitHub Pages serves every file at the domain root, so a second homepage would go live at `rampjet.ai/rampjet-homepage.html`. It's in the original delivery zip if you need it.
+
+### Publishing note
+
+Everything in this repo is served publicly unless excluded. `BUILD.md` was reachable at `rampjet.ai/BUILD.md` until `_config.yml` was added; that file's `exclude:` list now keeps the internal docs out of the built site. **Add any new internal doc to that list.**
