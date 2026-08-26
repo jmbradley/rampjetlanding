@@ -38,7 +38,7 @@ A single-file marketing site for **Ramp/Jet**, which builds the operating system
 └── BUILD.md             ← this file
 ```
 
-No build step. No bundler, no framework. Vanilla HTML + inline `<style>` + a small inline `<script>`. `index.html` is ~995 lines.
+No build step. No bundler, no framework. Vanilla HTML + inline `<style>` + a small inline `<script>`. `index.html` is ~970 lines.
 
 **Deploy:** GitHub Pages from `main` → **rampjet.ai**. A push to `main` is a production deploy. Branch for anything unfinished.
 
@@ -136,8 +136,7 @@ Loaded from Google Fonts. No other typefaces.
 | 6 | Three products | `.products` — `#rework` `#reach` `#run` | paper |
 | 7 | What we don't do | `.dont` | steel |
 | 8 | The Full Build | `.full` `#full` | paper |
-| 9 | Proof | `.proof` | bone |
-| 10 | Book the call | `.final` `#book` | paper |
+| 9 | Book the call | `.final` `#book` | paper |
 
 Nav links target `#map`, `#rework`, `#reach`, `#run`, `#full` — all on this page. **When product pages exist**, these become `/rework`, `/reach`, `/run` and the anchors move with them.
 
@@ -247,7 +246,7 @@ The territory map collapses at ≤980px to a linear list in this order: stage 1,
 ## Not real yet
 
 - **Reach `$750/mo` and Run `from $3,500`** are the design doc's `[PLACEHOLDER]` values, rendering as live prices. Rework's $2,000 is real.
-- **All three proof quotes are illustrative.** The page labels them as such. Replace before this goes anywhere public.
+- **There is no proof/testimonial section.** It was removed rather than ship the design doc's illustrative quotes as if they were real. DESIGN.md §4.8 still specifies one; add it back when there are genuine customer statements or screenshots (a follow-up log, a quote that used to take a day).
 - **No mobile nav menu.** `.nav ul` is `display:none` under 820px with no hamburger; only the wordmark and Book-a-call button show.
 - **Product pages, `/advisors`, and the "Also from Rampjet" strip** don't exist yet.
 - Footer's "For advisors" link points at `#`.
