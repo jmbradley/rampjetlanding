@@ -179,6 +179,11 @@
   .full{padding:96px 0}
   .full .top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:40px}
   .route{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--ink);background:#fff}
+  /* product pages run four operations, not the Full Build's three. Declared before
+     the 900px rule below so that rule still collapses it to one column on mobile. */
+  .route--4{grid-template-columns:repeat(4,1fr)}
+  .route--4 .op{padding:24px 20px 26px}
+  .route--4 .op h3{font-size:clamp(21px,2.3vw,28px)}
   .op{padding:26px 24px 28px;border-left:2px solid var(--ink);position:relative}
   .op:first-child{border-left:0}
   .op .n{font-family:var(--stamp);font-size:12px;letter-spacing:.16em;color:var(--orange);text-transform:uppercase}
