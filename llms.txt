@@ -20,7 +20,8 @@ replace an ERP.
 - **Reach** — the demand engine. Every inquiry (web form, email, phone) captured, routed and
   followed up on a fixed schedule, with a weekly report. Billed monthly.
 - **Run** — operations. One process at a time (quoting, job tracking, customer records) moved out
-  of one person's head into a system the whole team can run. Fixed price per project, scoped first.
+  of one person's head into a system the whole team can run. From $3,500 per project, fixed price,
+  scoped first.
 - **The Full Build** — all three, built in order on one work order.
 
 ## Not offered
