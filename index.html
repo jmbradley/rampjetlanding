@@ -176,7 +176,7 @@
   .hero .row .spec{color:var(--mute-lt)}
   @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding:56px 0 64px}}
 
-  /* ORDER FORM — the signature */
+  /* WHAT YOU NEED — the signature card */
   .order{background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--orange);font-family:var(--mono)}
   .order .head{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:2px solid var(--ink);background:var(--bone)}
   .order .head .t{font-family:var(--stamp);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
@@ -604,7 +604,7 @@
     .packet,.packet-acc,.packet-return,.calibrate-ripple{opacity:0!important}
   }
 
-  /* what the order form carried down here */
+  /* what the selection card carried down here */
   .carried{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-top:22px;padding:12px 16px;background:var(--bone);border-left:4px solid var(--orange);font-family:var(--mono);font-size:14px}
   .carried .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
   .carried b{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:16px;letter-spacing:.02em}
@@ -666,11 +666,11 @@
         </div>
       </div>
 
-      <!-- ORDER FORM -->
+      <!-- WHAT YOU NEED -->
       <form class="order" id="order" onsubmit="return false" aria-label="Choose what you need">
-        <span class="stamp">Check what you need</span>
-        <div class="head"><span class="t">Order form</span><span class="n">RJ-2026-0001</span></div>
-        <div class="hint">Line items — check one or all three</div>
+        <span class="stamp">Start here</span>
+        <div class="head"><span class="t">What you need</span><span class="n">RJ-2026-0001</span></div>
+        <div class="hint">Check one or all three</div>
 
         <label class="line">
           <input type="checkbox" name="rework" value="Rework">
@@ -690,7 +690,7 @@
 
         <div class="tot">
           <div>
-            <div class="lbl">Your order</div>
+            <div class="lbl">Your selection</div>
             <div class="val" id="tot">Nothing checked yet. Start with the one that hurts.</div>
           </div>
           <a class="btn" href="#book" id="totbtn">Book a call</a>
