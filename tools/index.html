@@ -10,7 +10,7 @@
   gtag('config', 'G-ZZFPZGVQ6W');
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Free tools for owner-operated industrial companies. Start with the Founder Absence Checklist: five questions that show what stops when you're out for three weeks.">
+<meta name="description" content="Tools for owner-operated industrial companies, built for our own use first. Some free, some paid. Coming soon.">
 <title>Tools | Ramp/Jet</title>
 <link rel="canonical" href="https://rampjet.ai/tools/">
 <meta name="theme-color" content="#0E1013">
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Ramp/Jet">
 <meta property="og:url" content="https://rampjet.ai/tools/">
 <meta property="og:title" content="Tools — Ramp/Jet">
-<meta property="og:description" content="Five questions that show what stops when you're out for three weeks. No email required.">
+<meta property="og:description" content="Tools we use daily, built for our own use first. Some free, some paid. Coming soon.">
 <meta property="og:image" content="https://rampjet.ai/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,25 +33,6 @@
   .t-hero{background:var(--steel);color:var(--paper);padding:72px 0 76px}
   .t-hero h1 span{color:var(--orange)}
   .t-hero .sub{color:#C9CDD1;margin-top:22px}
-
-  .tool{padding:66px 0 76px}
-  .tool .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start}
-  .tool .lede{font-size:17px;color:#3A3F44;margin-top:16px;max-width:48ch}
-  .tool .lede+.lede{margin-top:14px}
-  .tool .kicker{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(19px,2.1vw,24px);line-height:1.14;margin-top:26px;max-width:26ch;border-left:4px solid var(--orange);padding-left:16px}
-  .tool .kicker span{color:var(--orange-dk)}
-  @media (max-width:900px){.tool .grid{grid-template-columns:1fr;gap:34px}}
-
-  /* result -> what to do about it */
-  .fixes{margin-top:30px;border-top:2px solid var(--ink)}
-  .fix{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
-  .fix .p{font-family:var(--disp);font-weight:900;font-size:20px;text-transform:uppercase}
-  .fix .p a{text-decoration:none;color:var(--orange-dk)}
-  .fix p{font-size:16px;color:#3A3F44}
-  @media (max-width:700px){.fix{grid-template-columns:1fr;gap:4px}}
-
-  .more{background:var(--bone);padding:56px 0;border-top:1px solid var(--line)}
-  .more p{font-size:17px;color:#3A3F44;max-width:60ch;margin-top:14px}
 </style>
 </head>
 <body id="top">
@@ -79,62 +60,9 @@
   <section class="t-hero">
     <div class="wrap">
       <div class="spec on">Tools</div>
-      <h1 style="margin-top:18px">Find out what <span>stops without you.</span></h1>
-      <p class="sub">Free, no email, nothing to install. Answer honestly and the result is worth something; answer optimistically and you've wasted two minutes of your own time.</p>
-    </div>
-  </section>
-
-  <section class="tool" id="absence-checklist">
-    <div class="wrap grid">
-      <div>
-        <div class="spec on">Tool 01</div>
-        <h2 style="margin-top:10px">The Founder Absence Checklist</h2>
-        <p class="lede">Most owners can name the one thing that stops when they're away. The second and third take longer to produce, and those are usually the ones that cost money.</p>
-        <p class="lede">Three weeks is the useful test. A week can be absorbed by one person texting you. Three is long enough that a quote goes stale, a customer calls twice, and a job ships without anyone invoicing it.</p>
-        <p class="kicker">Everything you know that isn't written down is worth <span>exactly nothing</span> to whoever comes next.</p>
-      </div>
-
-      <div>
-        <form class="sheet" id="absence" onsubmit="return false" aria-label="Founder absence checklist">
-          <div class="head"><span class="t">Founder Absence Checklist</span><span class="n honest">Be honest</span></div>
-          <div class="hint">You&rsquo;re out for three weeks &mdash; check the ones that still happen</div>
-          <label class="chk"><input type="checkbox" data-fix="reach"><span>A new inquiry gets answered the same day.</span></label>
-          <label class="chk"><input type="checkbox" data-fix="run"><span>A quote goes out, at the right price.</span></label>
-          <label class="chk"><input type="checkbox" data-fix="run"><span>A customer asks what they paid last time &mdash; someone can tell them.</span></label>
-          <label class="chk"><input type="checkbox" data-fix="run"><span>Someone can say where a job stands without asking you.</span></label>
-          <label class="chk"><input type="checkbox" data-fix="reach"><span>Whoever called twice gets a call back.</span></label>
-          <div class="res">
-            <div class="lbl">Result</div>
-            <div class="val" id="absence-res">Nothing checked yet.</div>
-          </div>
-        </form>
-
-        <div id="fixes" hidden>
-          <div class="spec on" style="margin-top:34px">What closes the gap</div>
-          <div class="fixes">
-            <div class="fix" id="fix-reach" hidden>
-              <div class="p"><a href="/reach/">Reach</a></div>
-              <p>Inquiries and call-backs. Every enquiry captured, routed to one owner, and followed up on a schedule that runs whether or not anyone remembers.</p>
-            </div>
-            <div class="fix" id="fix-run" hidden>
-              <div class="p"><a href="/run/">Run</a></div>
-              <p>Quoting, job status and customer records. One process at a time, out of one person's head and into something the team can run.</p>
-            </div>
-            <div class="fix" id="fix-none" hidden>
-              <div class="p">&mdash;</div>
-              <p>Nothing to sell you here. If all five genuinely hold while you're gone, you've built something most owners haven't &mdash; keep it that way.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="more">
-    <div class="wrap">
-      <div class="spec on">More tools</div>
-      <h2 style="margin-top:10px">Built for our own use first.</h2>
-      <p>We&rsquo;ve done a lot of work in this space. We&rsquo;ve come up with some tools that we use daily. Some we&rsquo;ll give away and others we&rsquo;ll charge for. Stay tuned, they&rsquo;re coming soon.</p>
+      <h1 style="margin-top:18px">Built for our <span>own use first.</span></h1>
+      <p class="sub">We&rsquo;ve done a lot of work in this space. We&rsquo;ve come up with some tools that we use daily. Some we&rsquo;ll give away and others we&rsquo;ll charge for. Stay tuned, they&rsquo;re coming soon.</p>
+      <p class="sub" style="margin-top:14px">Something you&rsquo;d find useful? <a href="mailto:joseph@rampjet.ai" style="color:var(--orange)">Tell us</a> and it goes on the list.</p>
     </div>
   </section>
 
@@ -158,10 +86,13 @@
   <div class="wrap foot">
     <a class="brand" href="/">Ramp<b>/</b>Jet</a>
     <nav>
-      <a href="/#rework">Rework</a><a href="/reach/">Reach</a><a href="/run/">Run</a><a href="/tools/">Tools</a><a href="/insights/">Insights</a><a href="/advisors/">For advisors</a>
+      <a href="/#rework">Rework</a><a href="/reach/">Reach</a><a href="/run/">Run</a><a href="/tools/">Tools</a><a href="/insights/">Insights</a>
     </nav>
     <div>&copy; 2026 Rampjet &middot; Systems for industrial companies</div>
   </div>
+    <div class="wrap foot-advisors">
+      <a href="/advisors/">For brokers, CPAs and advisors &rarr;</a>
+    </div>
 </footer>
 
 <script>
@@ -181,32 +112,6 @@
     window.addEventListener('resize',function(){ if(window.innerWidth>820) set(false); });
   })();
 
-  // Absence checklist. Counts the gap, then names which product closes it.
-  (function(){
-    var f=document.getElementById('absence'); if(!f) return;
-    var out=document.getElementById('absence-res');
-    var wrap=document.getElementById('fixes');
-    var boxes=[].slice.call(f.querySelectorAll('input[type=checkbox]'));
-    var el={reach:document.getElementById('fix-reach'),run:document.getElementById('fix-run'),none:document.getElementById('fix-none')};
-    f.addEventListener('change',function(){
-      var kept=boxes.filter(function(b){return b.checked}).length;
-      var gap=boxes.length-kept;
-      var missing={};
-      boxes.forEach(function(b){ if(!b.checked) missing[b.getAttribute('data-fix')]=true; });
-
-      if(kept===0){ out.innerHTML='Nothing checked yet.'; wrap.hidden=true;
-        el.reach.hidden=true; el.run.hidden=true; el.none.hidden=true; return; }
-      if(gap===0){
-        out.innerHTML='<b>All five.</b> Rare — and worth protecting.';
-        wrap.hidden=false; el.reach.hidden=true; el.run.hidden=true; el.none.hidden=false; return;
-      }
-      out.innerHTML='<b>'+gap+' of '+boxes.length+'</b> still wait on one person.<br>That’s what we build.';
-      wrap.hidden=false;
-      el.none.hidden=true;
-      el.reach.hidden=!missing.reach;
-      el.run.hidden=!missing.run;
-    });
-  })();
 </script>
 </body>
 </html>

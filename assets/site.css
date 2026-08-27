@@ -533,3 +533,8 @@
   footer .foot a{color:var(--mute-lt)}
   footer .foot nav a{margin-left:18px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
   footer .foot nav a:hover{color:var(--paper)}
+  /* advisors gets its own line: findable for the people looking for it,
+     skimmed past by owners. Stays out of the header nav (design doc §6). */
+  footer .foot-advisors{border-top:1px solid var(--line-dk);margin-top:20px;padding-top:18px}
+  footer .foot-advisors a{display:inline-block;font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:3px}
+  footer .foot-advisors a:hover{color:var(--orange)}
