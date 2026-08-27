@@ -197,7 +197,7 @@ The all-five case matters: an owner who genuinely has this handled walks away fe
 
 ### 3. Booking form (`#cta-form`)
 
-Posts to Formspree (`f/xojryrdy`) via `fetch`, shows `#thanks` or `#form-error` inline. Honeypot `_gotcha` field. Error path points at joseph@rampjet.ai.
+Posts to Formspree (`f/xojryrdy`) via `fetch`, shows `#thanks` or `#form-error` inline. Honeypot `_gotcha` field. Error path points at the address assembled by `assets/site.js`.
 
 ---
 
