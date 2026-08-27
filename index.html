@@ -604,6 +604,12 @@
     .packet,.packet-acc,.packet-return,.calibrate-ripple{opacity:0!important}
   }
 
+  /* what the order form carried down here */
+  .carried{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-top:22px;padding:12px 16px;background:var(--bone);border-left:4px solid var(--orange);font-family:var(--mono);font-size:14px}
+  .carried .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .carried b{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:16px;letter-spacing:.02em}
+  .carried a{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-dk)}
+
   /* BOOKING FORM */
   .booking{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;max-width:560px}
   .booking input[type=email]{flex:1 1 260px;font-family:var(--mono);font-size:15px;padding:15px 16px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
@@ -991,6 +997,11 @@
       <div class="spec on">Book the call</div>
       <h2 style="margin-top:10px">Forty-five minutes. Then it's off your desk.</h2>
       <p class="sub" style="margin-top:16px">Tell us which of the three hurts most. If none of them is the right fix, we'll say so on the call and you've lost nothing but the coffee.</p>
+      <p class="carried" id="cta-carried" hidden>
+        <span class="k">On your order form</span>
+        <b id="cta-carried-items"></b>
+        <a href="#order">change</a>
+      </p>
       <form class="booking" id="cta-form" action="https://formspree.io/f/xojryrdy" method="POST">
         <label class="sr-only" for="cta-email">Email address</label>
         <input type="email" id="cta-email" name="email" placeholder="you@company.com" required>
@@ -1032,11 +1043,19 @@
     }
     form.addEventListener('change',update);
 
-    // Carry the order-form selection into the booking form (doc 4.6)
+    // Carry the order-form selection down to the booking form (doc 4.6).
+    // The hidden field is what Formspree receives; the visible line is so the
+    // visitor can see their choice survived six sections of scrolling.
     var items=document.getElementById('cta-items');
+    var carried=document.getElementById('cta-carried');
+    var carriedItems=document.getElementById('cta-carried-items');
     form.addEventListener('change',function(){
-      if(!items) return;
-      items.value=[].slice.call(form.querySelectorAll('input:checked')).map(function(i){return i.value}).join(', ');
+      var picked=[].slice.call(form.querySelectorAll('input:checked')).map(function(i){return i.value});
+      if(items) items.value=picked.join(', ');
+      if(!carried||!carriedItems) return;
+      if(!picked.length){ carried.hidden=true; return; }
+      carriedItems.textContent = picked.length===3 ? 'The Full Build' : picked.join(' + ');
+      carried.hidden=false;
     });
   })();
 
