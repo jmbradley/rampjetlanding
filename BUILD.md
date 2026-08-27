@@ -100,6 +100,11 @@ Two hits for "buyer" in the territory map are fine — that's *your customer's* 
 
 ## Voice
 
+**The voice guide is the authority: `~/Desktop/rampjet-voice-guide.md` ("The Honest Mechanic", locked v1, Aug 2026).** Not in this repo — §1 is marked private and §8 rule 2 concerns the advisor channel, and this repo is public. Ask Joseph for a copy. It carries an audit procedure; run it on any new page before shipping.
+
+The short version: the honest mechanic across the counter. Tells you what needs fixing **and what doesn't**. Prices like a parts list, never "let's talk" where a number would do. Outcome before technology. **Readiness, never selling** — "ready for whoever comes next", never "sell". Rampjet does not build new systems; it writes down and gets running the ones you have.
+
+
 Plain, short, shop-floor. Sentences an owner would say out loud. Concrete over abstract.
 
 **Avoid anywhere:** infrastructure, modernize, digital transformation, AI (as a headline or selling point), automation platform, solution, seamless, leverage, empower. The buyer fears rip-and-replace; every section should read as *"we connect what you have."*
