@@ -229,6 +229,11 @@
   .system .claimline span{color:var(--orange)}
   @media (max-width:900px){.system .grid{grid-template-columns:1fr;gap:36px}.system{padding:64px 0}}
 
+/* RAMP VISUAL — the hero flywheel.
+   WARNING: these class names are unscoped and global. .packet, .satellite,
+   .feeler, .jet-slot and friends carry opacity:0 plus an offset-path
+   animation, so any element on any page that reuses one of these names
+   goes invisible and slides off-screen. Prefix new component classes. */
 /* RAMP VISUAL */
 .ramp-visual {
   position: relative;

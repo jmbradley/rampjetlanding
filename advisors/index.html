@@ -37,13 +37,13 @@
   .col p{font-size:15px;color:#3A3F44}
   @media (max-width:900px){.cols{grid-template-columns:1fr}.col{border-left:0;border-top:2px solid var(--ink)}.col:first-child{border-top:0}}
 
-  .packet{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-  .packet ul{list-style:none}
-  .packet li{padding:13px 0 13px 30px;border-top:1px solid var(--line);position:relative;font-size:16px;color:#3A3F44}
-  .packet li:last-child{border-bottom:1px solid var(--line)}
-  .packet li::before{content:"";position:absolute;left:0;top:21px;width:16px;height:2px;background:var(--orange)}
-  .packet li b{color:var(--ink);font-weight:600}
-  @media (max-width:900px){.packet{grid-template-columns:1fr;gap:28px}}
+  .tpacket{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .tpacket ul{list-style:none}
+  .tpacket li{padding:13px 0 13px 30px;border-top:1px solid var(--line);position:relative;font-size:16px;color:#3A3F44}
+  .tpacket li:last-child{border-bottom:1px solid var(--line)}
+  .tpacket li::before{content:"";position:absolute;left:0;top:21px;width:16px;height:2px;background:var(--orange)}
+  .tpacket li b{color:var(--ink);font-weight:600}
+  @media (max-width:900px){.tpacket{grid-template-columns:1fr;gap:28px}}
 
   .terms{background:var(--bone);border:1px solid var(--line);font-family:var(--mono);font-size:14px;margin-top:28px}
   .terms .r{display:flex;justify-content:space-between;gap:16px;padding:13px 18px;border-top:1px dashed var(--line)}
@@ -152,7 +152,7 @@
     <div class="wrap">
       <div class="spec on">At close</div>
       <h2 style="margin-top:10px">The Transfer Packet.</h2>
-      <div class="packet" style="margin-top:34px">
+      <div class="tpacket" style="margin-top:34px">
         <div>
           <p class="sub" style="font-size:17px">When the deal closes, the acquirer gets the whole footprint on paper: everything in the company's name, every login, every inspection since the rework — and, for anything Run built, the documented process and system access alongside it.</p>
           <p class="sub" style="font-size:17px;margin-top:16px">You get to say "the digital and operating side is accounted for" in diligence and mean it. Your client, usually staying on through transition, doesn't get called about a domain renewal in month four.</p>
