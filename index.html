@@ -110,6 +110,17 @@
     font-size: 11px; letter-spacing: 0.2em; color: var(--faint); text-transform: uppercase;
   }
   .m-only { display: none; }
+  /* the "shh" figure: sits in the bottom-left corner, rising over the footer rule,
+     with the copyright to its right. Sized by viewport height so it never crowds
+     the headline on a short screen. */
+  .shh {
+    position: absolute; z-index: 2;
+    left: clamp(24px, 4.4vw, 64px);
+    bottom: clamp(24px, 4.4vh, 40px);
+    height: clamp(88px, 17vh, 168px); width: auto;
+    pointer-events: none; user-select: none;
+  }
+  footer .d-only:first-child { margin-left: calc(clamp(88px, 17vh, 168px) + 18px); }
 
   /* Phones and narrow screens */
   @media (max-width: 760px) {
@@ -123,7 +134,7 @@
     .brand { gap: 10px; }
     .brand img { width: 24px; }
     .brand span { font-size: 12px; letter-spacing: 0.38em; }
-    .status, .d-only { display: none; }
+    .status, .d-only, .shh { display: none; }
     .m-only { display: inline; }
     main { max-width: none; gap: 24px; margin-top: auto; margin-bottom: 32px; }
     .eyebrow { font-size: 10px; letter-spacing: 0.2em; }
@@ -157,6 +168,8 @@
     <h1>We build what<br> <span class="soft">can’t be bought</span><span class="stop">.</span></h1>
     <p class="lede">Private software, engineered for a short list of companies.</p>
   </main>
+
+  <img class="shh" src="/shh.png" alt="" width="640" height="639">
 
   <footer>
     <span class="d-only">© 2026 Rampjet</span>

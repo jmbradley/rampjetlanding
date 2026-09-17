@@ -4,6 +4,7 @@ A single holding page. No nav, no other routes.
 
 - `index.html` — the page (self-contained CSS; Google Fonts for Instrument Serif and JetBrains Mono)
 - `mark.png` — the flywheel mark, used as both the hero graphic and the brand icon
+- `shh.png` — the finger-to-lips figure in the footer corner (3-colour palette PNG, 24 KB; hidden on phones)
 - `og-image.png` — share card, rendered from the page at 1200x630
 - `favicon.svg`, `apple-touch-icon.png`
 - `CNAME` — rampjet.ai on GitHub Pages; **a push to `main` is a production deploy**
