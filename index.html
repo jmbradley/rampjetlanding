@@ -110,17 +110,11 @@
     font-size: 11px; letter-spacing: 0.2em; color: var(--faint); text-transform: uppercase;
   }
   .m-only { display: none; }
-  /* the "shh" figure: sits in the bottom-left corner, rising over the footer rule,
-     with the copyright to its right. Sized by viewport height so it never crowds
-     the headline on a short screen. */
-  .shh {
-    position: absolute; z-index: 2;
-    left: clamp(24px, 4.4vw, 64px);
-    bottom: clamp(24px, 4.4vh, 40px);
-    height: clamp(88px, 17vh, 168px); width: auto;
-    pointer-events: none; user-select: none;
-  }
-  footer .d-only:first-child { margin-left: calc(clamp(88px, 17vh, 168px) + 18px); }
+  /* the "shh" figure: a small mark at the end of the footer row, sitting
+     under the rule after "Built quietly". Sized to the row so it never
+     rises above the line or crowds the headline. */
+  footer .right { display: flex; align-items: center; gap: 14px; }
+  .shh { height: 44px; width: auto; display: block; pointer-events: none; user-select: none; }
 
   /* Phones and narrow screens */
   @media (max-width: 760px) {
@@ -169,11 +163,9 @@
     <p class="lede">Private software, engineered for a short list of companies.</p>
   </main>
 
-  <img class="shh" src="/shh.png" alt="" width="640" height="639">
-
   <footer>
     <span class="d-only">© 2026 Rampjet</span>
-    <span class="d-only">Built quietly</span>
+    <span class="right d-only"><span>Built quietly</span><img class="shh" src="/shh.png" alt="" width="640" height="639"></span>
     <span class="m-only">By introduction only</span>
     <span class="m-only">© 2026</span>
   </footer>
